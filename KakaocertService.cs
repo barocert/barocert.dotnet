@@ -268,6 +268,11 @@ namespace Kakaocert
             }
         }
 
+        public String encrypt()
+        {
+
+        }
+
         public IdentityReceipt requestIdentity(String ClientCode, Identity identity)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
