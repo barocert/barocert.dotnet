@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Text;
 using System.Runtime.Serialization;
+
 
 namespace Kakaocert
 {
     [DataContract]
-    public class MultiSignToken
+    public class Response
     {
         [DataMember]
-        public String reqTitle;
+        public long code;
         [DataMember]
-        public String token;
+        public String message;
     }
+
 }

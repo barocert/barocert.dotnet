@@ -10,7 +10,7 @@ namespace Kakaocert
     public class MultiSignResult
     {
         [DataMember]
-        public String receiptId;
+        public String receiptID;
         [DataMember]
         public String state;
         [DataMember]

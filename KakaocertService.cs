@@ -8,6 +8,7 @@ using System.Net;
 using Linkhub;
 using System.Web.Script.Serialization;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 
 namespace Kakaocert
@@ -18,7 +19,7 @@ namespace Kakaocert
         private const string ServiceID = "BAROCERT";
         private const String ServiceURL_Default = "https://barocert.linkhub.co.kr";
         private const String ServiceURL_Static = "https://static-barocert.linkhub.co.kr";
-        
+
         private const String APIVersion = "2.0";
         private const String CRLF = "\r\n";
 
@@ -31,6 +32,8 @@ namespace Kakaocert
         private Authority _LinkhubAuth;
         private List<String> _Scopes = new List<string>();
 
+        private const int CBC_IV_LENGTH = 16;
+        private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
 
         public bool IPRestrictOnOff
         {
@@ -127,11 +130,11 @@ namespace Kakaocert
                 {
                     if (_IPRestrictOnOff) // IPRestrictOnOff 사용시
                     {
-                        _token = _LinkhubAuth.getToken(ServiceID, CorpNum, _Scopes, null, UseStaticIP, UseLocalTimeYN, false);
+                        _token = _LinkhubAuth.getToken(ServiceID, "", _Scopes, null, UseStaticIP, UseLocalTimeYN, false);
                     }
                     else
                     {
-                        _token = _LinkhubAuth.getToken(ServiceID, CorpNum, _Scopes, "*", UseStaticIP, UseLocalTimeYN, false);
+                        _token = _LinkhubAuth.getToken(ServiceID, "", _Scopes, "*", UseStaticIP, UseLocalTimeYN, false);
                     }
 
 
@@ -156,7 +159,7 @@ namespace Kakaocert
 
             if (String.IsNullOrEmpty(_LinkID) == false)
             {
-                String bearerToken = getSession_Token(CorpNum);
+                String bearerToken = getSession_Token();
                 request.Headers.Add("Authorization", "Bearer" + " " + bearerToken);
             }
 
@@ -204,9 +207,9 @@ namespace Kakaocert
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(ServiceURL + url);
 
             request.ContentType = "application/json;";
-            
 
-            String bearerToken = getSession_Token(_LinkID);
+
+            String bearerToken = getSession_Token();
 
             String xDate = _LinkhubAuth.getTime(UseStaticIP, false, false);
 
@@ -215,7 +218,6 @@ namespace Kakaocert
 
             request.Headers.Add("x-bc-date", xDate);
 
-            request.Headers.Add("x-bc-version", "2.0");
 
             request.Headers.Add("Accept-Encoding", "gzip, deflate");
 
@@ -229,7 +231,7 @@ namespace Kakaocert
 
             String HMAC_target = "POST\n";
             HMAC_target += url + "\n";
-            if (false == String.IsNullOrEmpty(PostData) )
+            if (false == String.IsNullOrEmpty(PostData))
             {
                 HMAC_target += Convert.ToBase64String(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(PostData))) + "\n";
             }
@@ -238,7 +240,9 @@ namespace Kakaocert
             HMACSHA256 hmac = new HMACSHA256(Convert.FromBase64String(_SecretKey));
             String hmac_str = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(HMAC_target)));
 
+            request.Headers.Add("x-bc-version", "2.0");
             request.Headers.Add("x-bc-auth", hmac_str);
+            request.Headers.Add("x-bc-encryptionmode", "CBC");
 
             request.ContentLength = btPostDAta.Length;
 
@@ -268,10 +272,57 @@ namespace Kakaocert
             }
         }
 
-        public String encrypt()
+        public String encrypt(String plainText)
         {
-
+            return encCBC(plainText);
         }
+
+        private String encCBC(String plainText)
+        {
+            byte[] iv = newCBCbyte();
+            byte[] concatted = null;
+
+            using (AesCryptoServiceProvider aes = new AesCryptoServiceProvider())
+            {
+                aes.KeySize = 256;
+                aes.Key = Convert.FromBase64String(_SecretKey);
+                aes.IV = iv;
+                aes.Mode = CipherMode.CBC;
+                aes.Padding = PaddingMode.PKCS7;
+
+                // 스트림 변환을 수행할 해독을 만든다.
+                ICryptoTransform enc = aes.CreateEncryptor(aes.Key, aes.IV);
+
+                // 암호화에 사용되는 스트림을 만든다.
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, enc, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter sw = new StreamWriter(cs))
+                        {
+                            // 암호화 할 데이터를 스트림에 넣는다.
+                            sw.Write(plainText);
+                        }
+
+                        byte[] encrypted = ms.ToArray();
+
+                        concatted = new byte[encrypted.Length + aes.IV.Length];
+                        aes.IV.CopyTo(concatted, 0);
+                        encrypted.CopyTo(concatted, 16);
+                    }
+                }
+            }
+
+            return Convert.ToBase64String(concatted);
+        }
+
+        private static byte[] newCBCbyte()
+        {
+            byte[] nonce = new byte[CBC_IV_LENGTH];
+            new RNGCryptoServiceProvider().GetBytes(nonce);
+            return nonce;
+        }
+
 
         public IdentityReceipt requestIdentity(String ClientCode, Identity identity)
         {
@@ -286,7 +337,11 @@ namespace Kakaocert
         public IdentityStatus getIdentityStatus(String ClientCode, String ReceiptId)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
             if (String.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
             return httpget<IdentityStatus>("/KAKAO/Identity/" + ClientCode + "/" + ReceiptId);
         }
@@ -294,7 +349,11 @@ namespace Kakaocert
         public IdentityResult verifyIdentity(String ClientCode, String ReceiptId)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
             if (String.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
             return httppost<IdentityResult>("/KAKAO/Identity/" + ClientCode + "/" + ReceiptId);
         }
@@ -304,8 +363,6 @@ namespace Kakaocert
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
             if (sign == null) throw new BarocertException(-99999999, "전자서명 요청정보가 입력되지 않았습니다.");
 
-            sign.isAppUseYN = isAppUseYN;
-
             String PostData = toJsonString(sign);
 
             return httppost<SignReceipt>("/KAKAO/Sign/" + ClientCode, PostData);
@@ -314,7 +371,11 @@ namespace Kakaocert
         public SignStatus getSignStatus(String ClientCode, String ReceiptId)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
             if (String.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
             return httpget<SignStatus>("/KAKAO/Sign/" + ClientCode + "/" + ReceiptId);
         }
@@ -322,7 +383,11 @@ namespace Kakaocert
         public SignResult verifySign(String ClientCode, String ReceiptId)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
             if (String.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
             return httpget<SignResult>("/KAKAO/Sign/" + ClientCode + "/" + ReceiptId);
         }
@@ -341,7 +406,11 @@ namespace Kakaocert
         public MultiSignStatus getMultiSignStatus(String ClientCode, String ReceiptId)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
             if (String.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
             return httpget<MultiSignStatus>("/KAKAO/MultiSign/" + ClientCode + "/" + ReceiptId);
         }
@@ -350,7 +419,11 @@ namespace Kakaocert
         public MultiSignResult verifyMultiSign(String ClientCode, String ReceiptId)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
             if (String.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
             return httpget<MultiSignResult>("/KAKAO/MultiSign/" + ClientCode + "/" + ReceiptId);
         }
@@ -362,26 +435,32 @@ namespace Kakaocert
 
             String PostData = toJsonString(cms);
 
-            return httppost<CMSReceipt>("/KAKAO/Identity/" + ClientCode, PostData);
+            return httppost<CMSReceipt>("/KAKAO/CMS/" + ClientCode, PostData);
         }
 
-        public CMSResult getCMSStatus(String ClientCode, String ReceiptId)
+        public CMSStatus getCMSStatus(String ClientCode, String ReceiptId)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
             if (String.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
-            return httpget<CMSResult>("/KAKAO/Identity/" + ClientCode + "/" + ReceiptId);
+            return httpget<CMSStatus>("/KAKAO/CMS/" + ClientCode + "/" + ReceiptId);
         }
 
-        public IdentityResult verifyCMS(String ClientCode, String ReceiptId)
+        public CMSResult verifyCMS(String ClientCode, String ReceiptId)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
             if (String.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
-            return httppost<IdentityResult>("/KAKAO/Identity/" + ClientCode + "/" + ReceiptId);
+            return httppost<CMSResult>("/KAKAO/CMS/" + ClientCode + "/" + ReceiptId);
         }
 
-
-        
     }
 }

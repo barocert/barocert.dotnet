@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 
 namespace Kakaocert
 {
-    
+
     [DataContract]
     public class IdentityStatus
     {
@@ -43,7 +43,7 @@ namespace Kakaocert
         [DataMember]
         public String scheme;
         [DataMember]
-        public bool appUseYN; 
+        public bool appUseYN;
 
     }
 }

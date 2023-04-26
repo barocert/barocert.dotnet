@@ -9,7 +9,7 @@ namespace Kakaocert
     public class IdentityResult
     {
         [DataMember]
-        public String receiptId;
+        public String receiptID;
         [DataMember]
         public String state;
         [DataMember]

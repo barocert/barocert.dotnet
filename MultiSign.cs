@@ -20,12 +20,17 @@ namespace Kakaocert
         [DataMember]
         public int? expireIn;
         [DataMember]
-        public List<MultiSignToken> tokens;
+        public List<MultiSignTokens> tokens = new List<MultiSignTokens>();
         [DataMember]
         public String tokenType;
         [DataMember]
         public String returnURL;
         [DataMember]
         public bool appUseYN;
+
+        public void addToken(MultiSignTokens token)
+        {
+            tokens.Add(token);
+        }
     }
 }
