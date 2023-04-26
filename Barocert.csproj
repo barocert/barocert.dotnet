@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="BarocertException.cs" />
     <Compile Include="KakaocertService.cs" />
+    <Compile Include="MultiSignTokens.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -93,6 +94,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="CMS.cs" />
+    <Compile Include="Response.cs" />
     <Compile Include="Sign.cs" />
     <Compile Include="Identity.cs" />
     <Compile Include="CMSResult.cs" />

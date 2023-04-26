@@ -389,7 +389,7 @@ namespace Kakaocert
             if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
             if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
-            return httpget<SignResult>("/KAKAO/Sign/" + ClientCode + "/" + ReceiptId);
+            return httppost<SignResult>("/KAKAO/Sign/" + ClientCode + "/" + ReceiptId);
         }
 
         public MultiSignReceipt requestMultiSign(String ClientCode, MultiSign multiSign)
@@ -425,7 +425,7 @@ namespace Kakaocert
             if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
             if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
-            return httpget<MultiSignResult>("/KAKAO/MultiSign/" + ClientCode + "/" + ReceiptId);
+            return httppost<MultiSignResult>("/KAKAO/MultiSign/" + ClientCode + "/" + ReceiptId);
         }
 
         public CMSReceipt requestCMS(String ClientCode, CMS cms)
