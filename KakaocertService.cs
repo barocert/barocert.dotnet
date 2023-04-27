@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.IO;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -9,6 +10,11 @@ using Linkhub;
 using System.Web.Script.Serialization;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Modes;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Crypto.Engines;
 
 
 namespace Kakaocert
@@ -33,6 +39,8 @@ namespace Kakaocert
         private List<String> _Scopes = new List<string>();
 
         private const int CBC_IV_LENGTH = 16;
+        private const int GCM_IV_LENGTH = 12;
+        private const int GCM_TAG_LENGTH = 128;
         private static RNGCryptoServiceProvider rngCsp = new RNGCryptoServiceProvider();
 
         public bool IPRestrictOnOff
@@ -242,7 +250,7 @@ namespace Kakaocert
 
             request.Headers.Add("x-bc-version", "2.0");
             request.Headers.Add("x-bc-auth", hmac_str);
-            request.Headers.Add("x-bc-encryptionmode", "CBC");
+            request.Headers.Add("x-bc-encryptionmode", "GCM");
 
             request.ContentLength = btPostDAta.Length;
 
@@ -274,7 +282,25 @@ namespace Kakaocert
 
         public String encrypt(String plainText)
         {
-            return encCBC(plainText);
+            return encGCM(plainText);
+        }
+
+        private String encGCM(String plainText)
+        {
+            var cipher = new GcmBlockCipher(new AesEngine());
+            byte[] iv = newGCMbyte();
+            byte[] key = Convert.FromBase64String(_SecretKey);
+            var parameters = new AeadParameters(new KeyParameter(key), GCM_TAG_LENGTH, iv, null);
+            cipher.Init(true, parameters);
+            UTF8Encoding utf8 = new UTF8Encoding();
+            byte[] ciphertextBytes = new byte[cipher.GetOutputSize(utf8.GetByteCount(plainText))];
+            int len = cipher.ProcessBytes(utf8.GetBytes(plainText), 0, utf8.GetByteCount(plainText), ciphertextBytes, 0);
+            cipher.DoFinal(ciphertextBytes, len);
+
+            byte[] concatted = new byte[ciphertextBytes.Length + iv.Length];
+            iv.CopyTo(concatted, 0);
+            ciphertextBytes.CopyTo(concatted, 12);
+            return Convert.ToBase64String(concatted);
         }
 
         private String encCBC(String plainText)
@@ -316,6 +342,12 @@ namespace Kakaocert
             return Convert.ToBase64String(concatted);
         }
 
+        private static byte[] newGCMbyte()
+        {
+            byte[] nonce = new byte[GCM_IV_LENGTH];
+            new RNGCryptoServiceProvider().GetBytes(nonce);
+            return nonce;
+        }
         private static byte[] newCBCbyte()
         {
             byte[] nonce = new byte[CBC_IV_LENGTH];
