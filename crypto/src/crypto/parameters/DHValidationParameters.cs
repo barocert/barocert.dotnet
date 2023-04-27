@@ -1,8 +1,8 @@
 using System;
 
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class DHValidationParameters
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 
-using Org.BouncyCastle.Math.Raw;
+using Linkhub.BouncyCastle.Math.Raw;
 
-namespace Org.BouncyCastle.Utilities
+namespace Linkhub.BouncyCastle.Utilities
 {
     public abstract class Longs
     {

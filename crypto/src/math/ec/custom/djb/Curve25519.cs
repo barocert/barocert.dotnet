@@ -1,10 +1,10 @@
 ﻿using System;
 
-using Org.BouncyCastle.Math.Raw;
-using Org.BouncyCastle.Security;
-using Org.BouncyCastle.Utilities.Encoders;
+using Linkhub.BouncyCastle.Math.Raw;
+using Linkhub.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Utilities.Encoders;
 
-namespace Org.BouncyCastle.Math.EC.Custom.Djb
+namespace Linkhub.BouncyCastle.Math.EC.Custom.Djb
 {
     internal class Curve25519
         : AbstractFpCurve

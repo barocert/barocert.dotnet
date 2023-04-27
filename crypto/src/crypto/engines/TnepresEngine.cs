@@ -1,9 +1,9 @@
 ﻿using System;
 
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Crypto.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Engines
+namespace Linkhub.BouncyCastle.Crypto.Engines
 {
     /**
      * Tnepres is a 128-bit 32-round block cipher with variable key lengths,

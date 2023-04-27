@@ -8,10 +8,10 @@ using System.Collections.Generic;
 using System.Linq;
 #endif
 
-using Org.BouncyCastle.Utilities;
-using Org.BouncyCastle.Utilities.Collections;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities.Collections;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     abstract public class Asn1Set
         : Asn1Object, IEnumerable

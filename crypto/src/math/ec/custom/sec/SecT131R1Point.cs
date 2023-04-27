@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Org.BouncyCastle.Math.EC.Custom.Sec
+namespace Linkhub.BouncyCastle.Math.EC.Custom.Sec
 {
     internal class SecT131R1Point
         : AbstractF2mPoint

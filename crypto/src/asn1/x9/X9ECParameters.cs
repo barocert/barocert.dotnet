@@ -1,10 +1,10 @@
 using System;
 
-using Org.BouncyCastle.Math;
-using Org.BouncyCastle.Math.EC;
-using Org.BouncyCastle.Math.Field;
+using Linkhub.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Math.EC;
+using Linkhub.BouncyCastle.Math.Field;
 
-namespace Org.BouncyCastle.Asn1.X9
+namespace Linkhub.BouncyCastle.Asn1.X9
 {
     /**
      * ASN.1 def for Elliptic-Curve ECParameters structure. See

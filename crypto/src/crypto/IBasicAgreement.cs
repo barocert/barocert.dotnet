@@ -1,7 +1,7 @@
 using System;
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Math;
 
-namespace Org.BouncyCastle.Crypto
+namespace Linkhub.BouncyCastle.Crypto
 {
     /**
      * The basic interface that basic Diffie-Hellman implementations

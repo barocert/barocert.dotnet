@@ -1,4 +1,4 @@
-namespace Org.BouncyCastle.Asn1.Oiw
+namespace Linkhub.BouncyCastle.Asn1.Oiw
 {
 	public abstract class OiwObjectIdentifiers
 	{

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Collections;
 #endif
 
-namespace Org.BouncyCastle.Utilities
+namespace Linkhub.BouncyCastle.Utilities
 {
     internal abstract class Platform
     {

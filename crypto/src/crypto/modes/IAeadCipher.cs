@@ -1,8 +1,6 @@
 ﻿using System;
 
-using Org.BouncyCastle.Crypto.Parameters;
-
-namespace Org.BouncyCastle.Crypto.Modes
+namespace Linkhub.BouncyCastle.Crypto.Modes
 {
     /// <summary>
     /// A cipher mode that includes authenticated encryption with a streaming mode and optional

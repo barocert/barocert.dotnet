@@ -1,10 +1,10 @@
 using System;
 
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Crypto.Parameters;
 
-namespace Org.BouncyCastle.Crypto.Generators
+namespace Linkhub.BouncyCastle.Crypto.Generators
 {
     /**
     * Basic KDF generator for derived keys and ivs as defined by IEEE P1363a/ISO 18033

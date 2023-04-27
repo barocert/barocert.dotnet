@@ -1,12 +1,11 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Macs;
-using Org.BouncyCastle.Crypto.Modes.Gcm;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Modes.Gcm;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Crypto.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Modes
+namespace Linkhub.BouncyCastle.Crypto.Modes
 {
     /// <summary>
     /// Implements the Galois/Counter mode (GCM) detailed in

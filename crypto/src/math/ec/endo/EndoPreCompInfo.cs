@@ -1,8 +1,8 @@
 ﻿using System;
 
-using Org.BouncyCastle.Math.EC.Multiplier;
+using Linkhub.BouncyCastle.Math.EC.Multiplier;
 
-namespace Org.BouncyCastle.Math.EC.Endo
+namespace Linkhub.BouncyCastle.Math.EC.Endo
 {
     public class EndoPreCompInfo
         : PreCompInfo

@@ -1,8 +1,8 @@
 ﻿using System;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Digests
+namespace Linkhub.BouncyCastle.Crypto.Digests
 {
     public abstract class Gost3411_2012Digest:IDigest,IMemoable
     {

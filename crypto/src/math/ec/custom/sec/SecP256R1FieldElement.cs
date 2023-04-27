@@ -1,10 +1,10 @@
 ﻿using System;
 
-using Org.BouncyCastle.Math.Raw;
-using Org.BouncyCastle.Utilities;
-using Org.BouncyCastle.Utilities.Encoders;
+using Linkhub.BouncyCastle.Math.Raw;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities.Encoders;
 
-namespace Org.BouncyCastle.Math.EC.Custom.Sec
+namespace Linkhub.BouncyCastle.Math.EC.Custom.Sec
 {
     internal class SecP256R1FieldElement
         : AbstractFpFieldElement

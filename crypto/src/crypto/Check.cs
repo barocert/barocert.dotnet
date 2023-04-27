@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Org.BouncyCastle.Crypto
+namespace Linkhub.BouncyCastle.Crypto
 {
     internal class Check
     {

@@ -3,7 +3,7 @@
 using System;
 using System.Security.Cryptography;
 
-namespace Org.BouncyCastle.Crypto.Prng
+namespace Linkhub.BouncyCastle.Crypto.Prng
 {
     /// <summary>
     /// Uses RandomNumberGenerator.Create() to get randomness generator

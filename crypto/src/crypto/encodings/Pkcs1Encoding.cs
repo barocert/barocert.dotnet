@@ -1,11 +1,11 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Crypto.Digests;
-using Org.BouncyCastle.Security;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Crypto.Digests;
+using Linkhub.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Encodings
+namespace Linkhub.BouncyCastle.Crypto.Encodings
 {
     /**
     * this does your basic Pkcs 1 v1.5 padding - whether or not you should be using this

@@ -1,8 +1,8 @@
 ﻿using System;
 
-using Org.BouncyCastle.Math.EC.Endo;
+using Linkhub.BouncyCastle.Math.EC.Endo;
 
-namespace Org.BouncyCastle.Math.EC.Multiplier
+namespace Linkhub.BouncyCastle.Math.EC.Multiplier
 {
     public class GlvMultiplier
         :   AbstractECMultiplier

@@ -22,13 +22,12 @@
  * great code.
  */
 
+using Linkhub.BouncyCastle.Utilities;
 using System;
 using System.Collections;
 using System.IO;
 
-using Org.BouncyCastle.Utilities;
-
-namespace Org.BouncyCastle.Apache.Bzip2
+namespace Linkhub.BouncyCastle.Apache.Bzip2
 {
 	/**
     * An output stream that compresses into the BZip2 format (with the file

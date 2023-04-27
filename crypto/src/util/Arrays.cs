@@ -1,9 +1,9 @@
 using System;
 using System.Text;
 
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Math;
 
-namespace Org.BouncyCastle.Utilities
+namespace Linkhub.BouncyCastle.Utilities
 {
     /// <summary> General array utilities.</summary>
     public abstract class Arrays

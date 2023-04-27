@@ -1,9 +1,9 @@
 using System;
 
-using Org.BouncyCastle.Asn1;
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Asn1;
+using Linkhub.BouncyCastle.Math;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class DHPrivateKeyParameters
 		: DHKeyParameters

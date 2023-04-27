@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 
-using Org.BouncyCastle.Utilities.IO;
+using Linkhub.BouncyCastle.Utilities.IO;
 
-namespace Org.BouncyCastle.Crypto.Digests
+namespace Linkhub.BouncyCastle.Crypto.Digests
 {
 	public class NullDigest : IDigest
 	{

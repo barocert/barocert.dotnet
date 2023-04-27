@@ -1,11 +1,11 @@
 using System;
 
-using Org.BouncyCastle.Asn1.X9;
-using Org.BouncyCastle.Math;
-using Org.BouncyCastle.Math.EC;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Asn1.X9;
+using Linkhub.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Math.EC;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class ECDomainParameters
     {

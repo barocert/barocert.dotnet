@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     public class Asn1OutputStream
         : DerOutputStream

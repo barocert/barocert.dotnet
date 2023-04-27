@@ -1,8 +1,8 @@
 ﻿using System;
 
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Math;
 
-namespace Org.BouncyCastle.Crypto
+namespace Linkhub.BouncyCastle.Crypto
 {
     public interface IRsa
     {

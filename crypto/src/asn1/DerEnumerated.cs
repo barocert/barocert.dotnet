@@ -1,9 +1,9 @@
 using System;
 
-using Org.BouncyCastle.Math;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     public class DerEnumerated
         : Asn1Object

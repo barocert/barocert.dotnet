@@ -1,9 +1,9 @@
 using System;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Math;
 
-namespace Org.BouncyCastle.Crypto.Encodings
+namespace Linkhub.BouncyCastle.Crypto.Encodings
 {
 	/**
 	* ISO 9796-1 padding. Note in the light of recent results you should

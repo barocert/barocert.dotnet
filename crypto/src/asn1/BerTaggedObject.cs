@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
 	/**
 	 * BER TaggedObject - in ASN.1 notation this is any object preceded by

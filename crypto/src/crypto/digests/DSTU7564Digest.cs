@@ -1,13 +1,12 @@
 ﻿using System;
 
-using Org.BouncyCastle.Crypto.Engines;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Crypto.Engines;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Crypto.Utilities;
 
-using Org.BouncyCastle.Utilities;
-using Org.BouncyCastle.Utilities.Encoders;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Digests
+namespace Linkhub.BouncyCastle.Crypto.Digests
 {
     /**
    * implementation of Ukrainian DSTU 7564 hash function

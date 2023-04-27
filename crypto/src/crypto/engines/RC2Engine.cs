@@ -1,9 +1,9 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Engines
+namespace Linkhub.BouncyCastle.Crypto.Engines
 {
     /**
     * an implementation of RC2 as described in RFC 2268

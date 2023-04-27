@@ -1,9 +1,9 @@
 ﻿using System;
 
-using Org.BouncyCastle.Crypto.Modes;
-using Org.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Crypto.Modes;
+using Linkhub.BouncyCastle.Crypto.Parameters;
 
-namespace Org.BouncyCastle.Crypto
+namespace Linkhub.BouncyCastle.Crypto
 {
     /**
     * The AEAD ciphers already handle buffering internally, so this class

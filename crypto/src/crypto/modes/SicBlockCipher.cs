@@ -1,11 +1,11 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Math;
 
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Modes
+namespace Linkhub.BouncyCastle.Crypto.Modes
 {
     /**
     * Implements the Segmented Integer Counter (SIC) mode on top of a simple

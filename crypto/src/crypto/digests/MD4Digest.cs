@@ -1,8 +1,8 @@
 using System;
 
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Digests
+namespace Linkhub.BouncyCastle.Crypto.Digests
 {
     /**
     * implementation of MD4 as RFC 1320 by R. Rivest, MIT Laboratory for

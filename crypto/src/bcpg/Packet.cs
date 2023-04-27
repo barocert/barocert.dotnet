@@ -1,4 +1,4 @@
-namespace Org.BouncyCastle.Bcpg
+namespace Linkhub.BouncyCastle.Bcpg
 {
     public class Packet
         //: PacketTag

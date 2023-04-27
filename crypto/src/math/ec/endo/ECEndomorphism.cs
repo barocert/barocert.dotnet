@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Org.BouncyCastle.Math.EC.Endo
+namespace Linkhub.BouncyCastle.Math.EC.Endo
 {
     public interface ECEndomorphism
     {

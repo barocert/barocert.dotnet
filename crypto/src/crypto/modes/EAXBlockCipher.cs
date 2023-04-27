@@ -1,10 +1,10 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Macs;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Macs;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Modes
+namespace Linkhub.BouncyCastle.Crypto.Modes
 {
 	/**
 	* A Two-Pass Authenticated-Encryption Scheme Optimized for Simplicity and 

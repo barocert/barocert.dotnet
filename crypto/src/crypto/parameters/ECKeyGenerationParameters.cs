@@ -1,10 +1,10 @@
 using System;
 
-using Org.BouncyCastle.Asn1;
-using Org.BouncyCastle.Asn1.CryptoPro;
-using Org.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Asn1;
+using Linkhub.BouncyCastle.Asn1.CryptoPro;
+using Linkhub.BouncyCastle.Security;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class ECKeyGenerationParameters
 		: KeyGenerationParameters

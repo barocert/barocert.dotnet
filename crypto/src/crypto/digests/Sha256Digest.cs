@@ -1,9 +1,9 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Digests
+namespace Linkhub.BouncyCastle.Crypto.Digests
 {
     /**
     * Draft FIPS 180-2 implementation of SHA-256. <b>Note:</b> As this is

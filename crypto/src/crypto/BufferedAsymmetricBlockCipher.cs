@@ -1,9 +1,9 @@
 using System;
 using System.Diagnostics;
 
-using Org.BouncyCastle.Crypto.Engines;
+using Linkhub.BouncyCastle.Crypto.Engines;
 
-namespace Org.BouncyCastle.Crypto
+namespace Linkhub.BouncyCastle.Crypto
 {
     /**
     * a buffer wrapper for an asymmetric block cipher, allowing input

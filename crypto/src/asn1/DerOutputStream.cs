@@ -1,9 +1,9 @@
 using System;
 using System.IO;
 
-using Org.BouncyCastle.Utilities.IO;
+using Linkhub.BouncyCastle.Utilities.IO;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     [Obsolete("Use 'Asn1OutputStream' instead")]
     public class DerOutputStream

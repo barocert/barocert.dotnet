@@ -1,9 +1,9 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Engines
+namespace Linkhub.BouncyCastle.Crypto.Engines
 {
 	/// <summary>
 	/// Implementation of Daniel J. Bernstein's ChaCha stream cipher.

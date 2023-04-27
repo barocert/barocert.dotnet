@@ -1,9 +1,8 @@
 using System;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Utilities;
 
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Utilities;
-
-namespace Org.BouncyCastle.Crypto.Prng
+namespace Linkhub.BouncyCastle.Crypto.Prng
 {
 	/**
 	 * Random generation based on the digest with counter. Calling AddSeedMaterial will

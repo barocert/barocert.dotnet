@@ -1,6 +1,6 @@
 using System;
 
-namespace Org.BouncyCastle.Utilities.Date
+namespace Linkhub.BouncyCastle.Utilities.Date
 {
 	public class DateTimeUtilities
 	{

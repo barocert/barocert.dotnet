@@ -1,8 +1,9 @@
 ﻿using System;
 
-using Org.BouncyCastle.Math.Raw;
+using Linkhub.BouncyCastle.Math.Raw;
+using barocert.crypto.src.math.ec.custom.djb;
 
-namespace Org.BouncyCastle.Math.EC.Custom.Djb
+namespace Linkhub.BouncyCastle.Math.EC.Custom.Djb
 {
     internal class Curve25519Point
         : AbstractFpPoint

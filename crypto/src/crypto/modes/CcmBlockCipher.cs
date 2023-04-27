@@ -1,12 +1,12 @@
 using System;
 using System.IO;
 
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Macs;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto.Macs;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Modes
+namespace Linkhub.BouncyCastle.Crypto.Modes
 {
     /**
     * Implements the Counter with Cipher Block Chaining mode (CCM) detailed in

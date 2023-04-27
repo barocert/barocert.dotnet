@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 
-using Org.BouncyCastle.Asn1;
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Asn1;
+using Linkhub.BouncyCastle.Math;
 
-namespace Org.BouncyCastle.Asn1.Oiw
+namespace Linkhub.BouncyCastle.Asn1.Oiw
 {
     public class ElGamalParameter
         : Asn1Encodable

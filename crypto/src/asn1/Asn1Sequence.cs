@@ -2,10 +2,10 @@ using System;
 using System.Collections;
 using System.IO;
 
-using Org.BouncyCastle.Utilities;
-using Org.BouncyCastle.Utilities.Collections;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities.Collections;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     public abstract class Asn1Sequence
         : Asn1Object, IEnumerable

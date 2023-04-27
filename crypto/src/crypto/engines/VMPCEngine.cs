@@ -1,8 +1,8 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Crypto.Parameters;
 
-namespace Org.BouncyCastle.Crypto.Engines
+namespace Linkhub.BouncyCastle.Crypto.Engines
 {
     public class VmpcEngine
         : IStreamCipher

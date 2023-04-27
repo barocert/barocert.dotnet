@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Org.BouncyCastle.Utilities.Encoders
+namespace Linkhub.BouncyCastle.Utilities.Encoders
 {
     /// <summary>
     /// Class to decode and encode Hex.

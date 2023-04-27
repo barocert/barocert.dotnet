@@ -1,10 +1,10 @@
 using System;
 
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Security;
 
-namespace Org.BouncyCastle.Crypto.Paddings
+namespace Linkhub.BouncyCastle.Crypto.Paddings
 {
 	/**
 	* A wrapper class that allows block ciphers to be used to process data in

@@ -1,11 +1,11 @@
 using System;
 using System.Diagnostics;
 
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Crypto.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Engines
+namespace Linkhub.BouncyCastle.Crypto.Engines
 {
     /**
     * an implementation of the AES (Rijndael), from FIPS-197.

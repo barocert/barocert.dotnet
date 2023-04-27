@@ -1,8 +1,8 @@
 ﻿using System;
 
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     public class DerVideotexString
         : DerStringBase

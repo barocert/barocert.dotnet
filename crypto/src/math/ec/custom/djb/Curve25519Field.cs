@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Math.Raw;
-using Org.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Math.Raw;
+using Linkhub.BouncyCastle.Security;
 
-namespace Org.BouncyCastle.Math.EC.Custom.Djb
+namespace Linkhub.BouncyCastle.Math.EC.Custom.Djb
 {
     internal class Curve25519Field
     {

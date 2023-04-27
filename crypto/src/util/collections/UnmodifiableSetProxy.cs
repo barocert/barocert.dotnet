@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 
-namespace Org.BouncyCastle.Utilities.Collections
+namespace Linkhub.BouncyCastle.Utilities.Collections
 {
 	public class UnmodifiableSetProxy
 		: UnmodifiableSet

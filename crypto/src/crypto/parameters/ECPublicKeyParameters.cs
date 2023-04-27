@@ -1,10 +1,10 @@
 using System;
 using System.Globalization;
 
-using Org.BouncyCastle.Asn1;
-using Org.BouncyCastle.Math.EC;
+using Linkhub.BouncyCastle.Asn1;
+using Linkhub.BouncyCastle.Math.EC;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class ECPublicKeyParameters
         : ECKeyParameters

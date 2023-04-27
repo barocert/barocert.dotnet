@@ -1,6 +1,6 @@
 using System;
 
-namespace Org.BouncyCastle.Crypto.Modes.Gcm
+namespace Linkhub.BouncyCastle.Crypto.Modes.Gcm
 {
 	public interface IGcmMultiplier
 	{

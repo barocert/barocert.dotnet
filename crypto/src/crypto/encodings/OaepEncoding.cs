@@ -1,12 +1,12 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Digests;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Security;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Digests;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Encodings
+namespace Linkhub.BouncyCastle.Crypto.Encodings
 {
     /**
     * Optimal Asymmetric Encryption Padding (OAEP) - see PKCS 1 V 2.

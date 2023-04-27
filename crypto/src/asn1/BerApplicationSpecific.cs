@@ -1,6 +1,6 @@
 using System;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
 	public class BerApplicationSpecific
 		: DerApplicationSpecific

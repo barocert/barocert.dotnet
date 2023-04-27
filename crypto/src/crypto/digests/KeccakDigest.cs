@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Digests
+namespace Linkhub.BouncyCastle.Crypto.Digests
 {
     /// <summary>
     /// Implementation of Keccak based on following KeccakNISTInterface.c from http://keccak.noekeon.org/

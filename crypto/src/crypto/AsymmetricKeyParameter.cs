@@ -1,8 +1,8 @@
 using System;
 
-using Org.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto;
 
-namespace Org.BouncyCastle.Crypto
+namespace Linkhub.BouncyCastle.Crypto
 {
     public abstract class AsymmetricKeyParameter
 		: ICipherParameters

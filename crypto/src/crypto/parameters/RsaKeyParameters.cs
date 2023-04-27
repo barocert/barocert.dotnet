@@ -1,9 +1,9 @@
 using System;
 
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Math;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
 	public class RsaKeyParameters
 		: AsymmetricKeyParameter

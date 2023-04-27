@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 
-using Org.BouncyCastle.Asn1;
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Asn1;
+using Linkhub.BouncyCastle.Math;
 
-namespace Org.BouncyCastle.Asn1.Pkcs
+namespace Linkhub.BouncyCastle.Asn1.Pkcs
 {
     public class RsaPrivateKeyStructure
         : Asn1Encodable

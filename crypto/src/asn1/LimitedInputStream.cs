@@ -1,8 +1,8 @@
 using System.IO;
 
-using Org.BouncyCastle.Utilities.IO;
+using Linkhub.BouncyCastle.Utilities.IO;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     internal abstract class LimitedInputStream
         : BaseInputStream

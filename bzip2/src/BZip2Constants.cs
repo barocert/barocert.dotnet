@@ -17,14 +17,15 @@
  */
 
 /*
- * This package is based on the work done by Keiron Liddle, Aftex Software
+ * This 
+ * age is based on the work done by Keiron Liddle, Aftex Software
  * <keiron@aftexsw.com> to whom the Ant project is very grateful for his
  * great code.
  */
 
 using System;
 
-namespace Org.BouncyCastle.Apache.Bzip2
+namespace Linkhub.BouncyCastle.Apache.Bzip2
 {
     /**
     * Base class for both the compress and decompress classes.

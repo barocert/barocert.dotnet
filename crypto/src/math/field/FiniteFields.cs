@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Org.BouncyCastle.Math.Field
+namespace Linkhub.BouncyCastle.Math.Field
 {
     public abstract class FiniteFields
     {

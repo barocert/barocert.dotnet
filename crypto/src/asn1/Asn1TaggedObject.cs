@@ -1,8 +1,8 @@
 using System;
 
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     /**
      * ASN.1 TaggedObject - in ASN.1 notation this is any object preceded by
@@ -10,7 +10,7 @@ namespace Org.BouncyCastle.Asn1
      * rules (as with sequences).
      */
     public abstract class Asn1TaggedObject
-		: Asn1Object, Asn1TaggedObjectParser
+		: Asn1Object
     {
         internal static bool IsConstructed(bool isExplicit, Asn1Object obj)
         {

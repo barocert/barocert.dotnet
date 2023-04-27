@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 
-using Org.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Crypto.Utilities;
 
-namespace Org.BouncyCastle.Math.Raw
+namespace Linkhub.BouncyCastle.Math.Raw
 {
     internal abstract class Nat160
     {

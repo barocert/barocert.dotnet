@@ -1,10 +1,10 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Math;
-using Org.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Security;
 
-namespace Org.BouncyCastle.Crypto.Agreement
+namespace Linkhub.BouncyCastle.Crypto.Agreement
 {
     /**
      * a Diffie-Hellman key agreement class.

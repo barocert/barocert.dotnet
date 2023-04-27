@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Org.BouncyCastle.Math.Raw
+namespace Linkhub.BouncyCastle.Math.Raw
 {
     internal abstract class Interleave
     {

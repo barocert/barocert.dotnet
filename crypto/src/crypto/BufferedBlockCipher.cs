@@ -1,9 +1,9 @@
 using System;
 using System.Diagnostics;
 
-using Org.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Crypto.Parameters;
 
-namespace Org.BouncyCastle.Crypto
+namespace Linkhub.BouncyCastle.Crypto
 {
 	/**
 	* A wrapper class that allows block ciphers to be used to process data in

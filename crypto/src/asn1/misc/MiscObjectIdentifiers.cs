@@ -1,4 +1,4 @@
-namespace Org.BouncyCastle.Asn1.Misc
+namespace Linkhub.BouncyCastle.Asn1.Misc
 {
     public abstract class MiscObjectIdentifiers
     {

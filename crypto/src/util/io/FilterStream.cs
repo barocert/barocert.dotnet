@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace Org.BouncyCastle.Utilities.IO
+namespace Linkhub.BouncyCastle.Utilities.IO
 {
     public class FilterStream : Stream
     {

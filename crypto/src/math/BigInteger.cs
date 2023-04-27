@@ -4,10 +4,10 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 
-using Org.BouncyCastle.Security;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Math
+namespace Linkhub.BouncyCastle.Math
 {
 #if !(NETCF_1_0 || NETCF_2_0 || SILVERLIGHT || PORTABLE)
     [Serializable]

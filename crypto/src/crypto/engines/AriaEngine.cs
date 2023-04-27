@@ -1,10 +1,10 @@
 ﻿using System;
 
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Utilities;
-using Org.BouncyCastle.Utilities.Encoders;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities.Encoders;
 
-namespace Org.BouncyCastle.Crypto.Engines
+namespace Linkhub.BouncyCastle.Crypto.Engines
 {
     /**
      * RFC 5794.

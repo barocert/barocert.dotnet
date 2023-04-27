@@ -1,8 +1,8 @@
 using System;
 
-using Org.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Security;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class ParametersWithRandom
 		: ICipherParameters

@@ -1,8 +1,8 @@
 ﻿using System;
 
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Math.EC.Multiplier
+namespace Linkhub.BouncyCastle.Math.EC.Multiplier
 {
     public abstract class WNafUtilities
     {

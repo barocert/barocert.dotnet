@@ -1,9 +1,9 @@
 ﻿using System;
 
-using Org.BouncyCastle.Math.Raw;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Math.Raw;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Math.EC.Custom.Djb
+namespace Linkhub.BouncyCastle.Math.EC.Custom.Djb
 {
     internal class Curve25519FieldElement
         : AbstractFpFieldElement

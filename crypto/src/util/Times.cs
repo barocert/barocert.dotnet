@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Org.BouncyCastle.Utilities
+namespace Linkhub.BouncyCastle.Utilities
 {
     public sealed class Times
     {

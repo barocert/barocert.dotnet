@@ -1,15 +1,15 @@
 using System;
 using System.Collections;
 
-using Org.BouncyCastle.Asn1.X9;
-using Org.BouncyCastle.Math;
-using Org.BouncyCastle.Math.EC;
-using Org.BouncyCastle.Math.EC.Multiplier;
-using Org.BouncyCastle.Utilities;
-using Org.BouncyCastle.Utilities.Collections;
-using Org.BouncyCastle.Utilities.Encoders;
+using Linkhub.BouncyCastle.Asn1.X9;
+using Linkhub.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Math.EC;
+using Linkhub.BouncyCastle.Math.EC.Multiplier;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities.Collections;
+using Linkhub.BouncyCastle.Utilities.Encoders;
 
-namespace Org.BouncyCastle.Asn1.GM
+namespace Linkhub.BouncyCastle.Asn1.GM
 {
     public sealed class GMNamedCurves
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Org.BouncyCastle.Crypto.Prng
+namespace Linkhub.BouncyCastle.Crypto.Prng
 {
 	/// <remarks>Generic interface for objects generating random bytes.</remarks>
 	public interface IRandomGenerator

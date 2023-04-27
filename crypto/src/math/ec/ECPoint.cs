@@ -2,10 +2,10 @@ using System;
 using System.Collections;
 using System.Text;
 
-using Org.BouncyCastle.Math.EC.Multiplier;
-using Org.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Math.EC.Multiplier;
+using Linkhub.BouncyCastle.Security;
 
-namespace Org.BouncyCastle.Math.EC
+namespace Linkhub.BouncyCastle.Math.EC
 {
     /**
      * base class for points on elliptic curves.

@@ -1,4 +1,4 @@
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
 	public class DerSequenceParser
 		: Asn1SequenceParser

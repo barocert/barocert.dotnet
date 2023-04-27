@@ -1,8 +1,8 @@
 using System;
 
-using Org.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Math;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class ElGamalPrivateKeyParameters
 		: ElGamalKeyParameters

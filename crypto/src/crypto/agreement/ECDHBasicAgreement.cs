@@ -1,11 +1,11 @@
 using System;
 
-using Org.BouncyCastle.Math;
-using Org.BouncyCastle.Math.EC;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Math.EC;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto.Parameters;
 
-namespace Org.BouncyCastle.Crypto.Agreement
+namespace Linkhub.BouncyCastle.Crypto.Agreement
 {
     /**
      * P1363 7.2.1 ECSVDP-DH

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 
-using Org.BouncyCastle.Math.Raw;
+using Linkhub.BouncyCastle.Math.Raw;
 
-namespace Org.BouncyCastle.Math.EC.Custom.Sec
+namespace Linkhub.BouncyCastle.Math.EC.Custom.Sec
 {
     internal class SecT409Field
     {

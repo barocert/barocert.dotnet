@@ -1,22 +1,22 @@
 using System;
 using System.Collections;
 
-using Org.BouncyCastle.Asn1;
-using Org.BouncyCastle.Asn1.GM;
-using Org.BouncyCastle.Asn1.Sec;
-using Org.BouncyCastle.Asn1.X9;
-using Org.BouncyCastle.Math;
-using Org.BouncyCastle.Math.EC;
-using Org.BouncyCastle.Math.EC.Custom.Djb;
-using Org.BouncyCastle.Math.EC.Custom.GM;
-using Org.BouncyCastle.Math.EC.Custom.Sec;
-using Org.BouncyCastle.Math.EC.Endo;
-using Org.BouncyCastle.Math.EC.Multiplier;
-using Org.BouncyCastle.Utilities;
-using Org.BouncyCastle.Utilities.Collections;
-using Org.BouncyCastle.Utilities.Encoders;
+using Linkhub.BouncyCastle.Asn1;
+using Linkhub.BouncyCastle.Asn1.GM;
+using Linkhub.BouncyCastle.Asn1.X9;
+using Linkhub.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Math.EC;
+using Linkhub.BouncyCastle.Math.EC.Endo;
+using Linkhub.BouncyCastle.Math.EC.Multiplier;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities.Collections;
+using Linkhub.BouncyCastle.Utilities.Encoders;
+using Linkhub.BouncyCastle.Math.EC.Custom.Djb;
+using Linkhub.BouncyCastle.Asn1.Sec;
+using Linkhub.BouncyCastle.Math.EC.Custom.Sec;
+using Linkhub.BouncyCastle.Math.EC.Custom.GM;
 
-namespace Org.BouncyCastle.Crypto.EC
+namespace Linkhub.BouncyCastle.Crypto.EC
 {
     public sealed class CustomNamedCurves
     {

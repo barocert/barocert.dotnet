@@ -1,7 +1,7 @@
 using System;
-using Org.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     /**
      * parameters for Key derivation functions for IEEE P1363a

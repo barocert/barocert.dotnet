@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Org.BouncyCastle.Asn1.Nsri
+namespace Linkhub.BouncyCastle.Asn1.Nsri
 {
     public sealed class NsriObjectIdentifiers
     {

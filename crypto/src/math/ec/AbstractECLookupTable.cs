@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Org.BouncyCastle.Math.EC
+namespace Linkhub.BouncyCastle.Math.EC
 {
     public abstract class AbstractECLookupTable
         : ECLookupTable

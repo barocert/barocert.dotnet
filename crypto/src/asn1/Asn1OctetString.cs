@@ -2,13 +2,13 @@ using System;
 using System.Collections;
 using System.IO;
 
-using Org.BouncyCastle.Utilities;
-using Org.BouncyCastle.Utilities.Encoders;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities.Encoders;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     public abstract class Asn1OctetString
-        : Asn1Object, Asn1OctetStringParser
+        : Asn1Object
     {
         internal static readonly byte[] EmptyOctets = new byte[0];
 
@@ -95,7 +95,7 @@ namespace Org.BouncyCastle.Asn1
 			return new MemoryStream(str, false);
 		}
 
-		public Asn1OctetStringParser Parser
+		public Asn1OctetString Parser
 		{
 			get { return this; }
 		}

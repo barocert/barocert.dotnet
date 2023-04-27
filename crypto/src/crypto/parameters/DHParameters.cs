@@ -1,9 +1,9 @@
 using System;
 
-using Org.BouncyCastle.Math;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Math;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class DHParameters
 		: ICipherParameters

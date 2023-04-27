@@ -8,13 +8,13 @@ using System.Text;
 using System.Net;
 using Linkhub;
 using System.Web.Script.Serialization;
-using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Modes;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Crypto.Engines;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto.Modes;
+using Linkhub.BouncyCastle.Crypto.Engines;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Security;
 
 
 namespace Kakaocert
@@ -300,7 +300,46 @@ namespace Kakaocert
             byte[] concatted = new byte[ciphertextBytes.Length + iv.Length];
             iv.CopyTo(concatted, 0);
             ciphertextBytes.CopyTo(concatted, 12);
+            decrypt();
             return Convert.ToBase64String(concatted);
+        }
+
+        public void decrypt()
+        {
+            // 비밀 키
+            var secretKey = "ngLuIsOvtgCjiXtrCHeTq2hw11hK7p2/hqijiEOZcWI=";
+
+            // 초기화 벡터
+            var iv = "LqPCk23cZpWZh4YKtPIaBg==";
+
+            // 암호문
+            string cipherText = "6wDC13nZMOVMcrvLxhQyXqZ57XbM/LDLAoL4FvSa45jXBmGfKoz2Yp2T";
+
+
+            // 비밀 키 Base64 디코딩
+            byte[] decodedSecretKey = Convert.FromBase64String(secretKey);
+
+            // 초기화 벡터 Base64 디코딩
+            byte[] decodedIV = Convert.FromBase64String(iv);
+
+            // 암호문 Base64 디코딩
+            byte[] decodedCipherText = Convert.FromBase64String(cipherText);
+
+            // 암호화 여부
+            bool isEncrypt = false; // 복호화
+
+            // 암호화 객체 설정 및 초기화
+            IBufferedCipher cipher = CipherUtilities.GetCipher("AES/CTR/NoPadding");
+            cipher.Init(isEncrypt, new ParametersWithIV(new KeyParameter(decodedSecretKey), decodedIV));
+
+            // 복호화
+            byte[] plainTextBytes = cipher.DoFinal(decodedCipherText);
+
+            // 문자열로 변경
+            string plainText = Encoding.UTF8.GetString(plainTextBytes);
+
+            Console.WriteLine("홍길동");
+
         }
 
         private String encCBC(String plainText)

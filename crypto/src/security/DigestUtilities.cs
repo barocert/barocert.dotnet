@@ -1,22 +1,22 @@
 using System;
 using System.Collections;
 
-using Org.BouncyCastle.Asn1;
-using Org.BouncyCastle.Asn1.CryptoPro;
-using Org.BouncyCastle.Asn1.GM;
-using Org.BouncyCastle.Asn1.Misc;
-using Org.BouncyCastle.Asn1.Nist;
-using Org.BouncyCastle.Asn1.Pkcs;
-using Org.BouncyCastle.Asn1.Oiw;
-using Org.BouncyCastle.Asn1.Rosstandart;
-using Org.BouncyCastle.Asn1.TeleTrust;
-using Org.BouncyCastle.Asn1.UA;
-using Org.BouncyCastle.Security;
-using Org.BouncyCastle.Crypto.Digests;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Asn1;
+using Linkhub.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Digests;
+using Linkhub.BouncyCastle.Asn1.CryptoPro;
+using Linkhub.BouncyCastle.Asn1.Nist;
+using Linkhub.BouncyCastle.Asn1.Misc;
+using Linkhub.BouncyCastle.Asn1.Rosstandart;
+using Linkhub.BouncyCastle.Asn1.Pkcs;
+using Linkhub.BouncyCastle.Asn1.Oiw;
+using Linkhub.BouncyCastle.Asn1.UA;
+using Linkhub.BouncyCastle.Asn1.GM;
+using Linkhub.BouncyCastle.Asn1.TeleTrust;
 
-namespace Org.BouncyCastle.Security
+namespace Linkhub.BouncyCastle.Security
 {
     /// <remarks>
     ///  Utility class for creating IDigest objects from their names/Oids

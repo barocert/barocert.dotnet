@@ -1,7 +1,7 @@
 using System;
-using Org.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class RC5Parameters
 		: KeyParameter

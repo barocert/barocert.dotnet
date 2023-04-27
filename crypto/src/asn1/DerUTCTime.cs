@@ -2,9 +2,9 @@ using System;
 using System.Globalization;
 using System.Text;
 
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
     /**
      * UTC time object.

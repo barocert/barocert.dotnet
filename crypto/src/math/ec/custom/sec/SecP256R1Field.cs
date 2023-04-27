@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Math.Raw;
-using Org.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Math.Raw;
+using Linkhub.BouncyCastle.Security;
 
-namespace Org.BouncyCastle.Math.EC.Custom.Sec
+namespace Linkhub.BouncyCastle.Math.EC.Custom.Sec
 {
     internal class SecP256R1Field
     {

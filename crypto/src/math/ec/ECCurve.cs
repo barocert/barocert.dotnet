@@ -1,14 +1,14 @@
 using System;
 using System.Collections;
 
-using Org.BouncyCastle.Math.EC.Abc;
-using Org.BouncyCastle.Math.EC.Endo;
-using Org.BouncyCastle.Math.EC.Multiplier;
-using Org.BouncyCastle.Math.Field;
-using Org.BouncyCastle.Security;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Math.EC.Endo;
+using Linkhub.BouncyCastle.Math.EC.Multiplier;
+using Linkhub.BouncyCastle.Math.Field;
+using Linkhub.BouncyCastle.Security;
+using Linkhub.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Math.EC.Abc;
 
-namespace Org.BouncyCastle.Math.EC
+namespace Linkhub.BouncyCastle.Math.EC
 {
     /// <remarks>Base class for an elliptic curve.</remarks>
     public abstract class ECCurve

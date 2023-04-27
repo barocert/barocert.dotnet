@@ -1,6 +1,6 @@
 using System;
 
-namespace Org.BouncyCastle.Crypto
+namespace Linkhub.BouncyCastle.Crypto
 {
 	/// <remarks>Base interface for a symmetric key block cipher.</remarks>
     public interface IBlockCipher

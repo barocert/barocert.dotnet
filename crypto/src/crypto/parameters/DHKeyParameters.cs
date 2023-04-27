@@ -1,10 +1,10 @@
 using System;
 
-using Org.BouncyCastle.Asn1;
-using Org.BouncyCastle.Asn1.Pkcs;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Asn1;
+using Linkhub.BouncyCastle.Asn1.Pkcs;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Parameters
+namespace Linkhub.BouncyCastle.Crypto.Parameters
 {
     public class DHKeyParameters
 		: AsymmetricKeyParameter

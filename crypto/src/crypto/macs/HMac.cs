@@ -1,11 +1,11 @@
 using System;
 using System.Collections;
 
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto;
+using Linkhub.BouncyCastle.Crypto.Parameters;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Macs
+namespace Linkhub.BouncyCastle.Crypto.Macs
 {
     /**
     * HMAC implementation based on RFC2104

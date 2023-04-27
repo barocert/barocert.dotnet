@@ -1,10 +1,10 @@
 using System;
 
-using Org.BouncyCastle.Crypto.Utilities;
-using Org.BouncyCastle.Math.Raw;
-using Org.BouncyCastle.Utilities;
+using Linkhub.BouncyCastle.Crypto.Utilities;
+using Linkhub.BouncyCastle.Math.Raw;
+using Linkhub.BouncyCastle.Utilities;
 
-namespace Org.BouncyCastle.Crypto.Modes.Gcm
+namespace Linkhub.BouncyCastle.Crypto.Modes.Gcm
 {
     internal abstract class GcmUtilities
     {

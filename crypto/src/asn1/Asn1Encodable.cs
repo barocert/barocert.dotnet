@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace Org.BouncyCastle.Asn1
+namespace Linkhub.BouncyCastle.Asn1
 {
 	public abstract class Asn1Encodable
 		: IAsn1Convertible

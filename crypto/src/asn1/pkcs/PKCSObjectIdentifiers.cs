@@ -1,6 +1,6 @@
 using System;
 
-namespace Org.BouncyCastle.Asn1.Pkcs
+namespace Linkhub.BouncyCastle.Asn1.Pkcs
 {
     public abstract class PkcsObjectIdentifiers
     {
