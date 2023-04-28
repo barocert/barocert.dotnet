@@ -582,8 +582,8 @@
     <Compile Include="crypto\src\util\Platform.cs" />
     <Compile Include="crypto\src\util\Strings.cs" />
     <Compile Include="crypto\src\util\Times.cs" />
-    <Compile Include="KakaocertService.cs" />
-    <Compile Include="MultiSignTokens.cs" />
+    <Compile Include="kakaocert\KakaocertService.cs" />
+    <Compile Include="kakaocert\MultiSignTokens.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -604,23 +604,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="CMS.cs" />
-    <Compile Include="Response.cs" />
-    <Compile Include="Sign.cs" />
-    <Compile Include="Identity.cs" />
-    <Compile Include="CMSResult.cs" />
-    <Compile Include="SignResult.cs" />
-    <Compile Include="IdentityResult.cs" />
-    <Compile Include="CMSStatus.cs" />
-    <Compile Include="SignStatus.cs" />
-    <Compile Include="IdentityStatus.cs" />
-    <Compile Include="MultiSign.cs" />
-    <Compile Include="MultiSignStatus.cs" />
-    <Compile Include="IdentityReceipt.cs" />
-    <Compile Include="CMSReceipt.cs" />
-    <Compile Include="SignReceipt.cs" />
-    <Compile Include="MultiSignReceipt.cs" />
-    <Compile Include="MultiSignResult.cs" />
+    <Compile Include="kakaocert\CMS.cs" />
+    <Compile Include="kakaocert\Response.cs" />
+    <Compile Include="kakaocert\Sign.cs" />
+    <Compile Include="kakaocert\Identity.cs" />
+    <Compile Include="kakaocert\CMSResult.cs" />
+    <Compile Include="kakaocert\SignResult.cs" />
+    <Compile Include="kakaocert\IdentityResult.cs" />
+    <Compile Include="kakaocert\CMSStatus.cs" />
+    <Compile Include="kakaocert\SignStatus.cs" />
+    <Compile Include="kakaocert\IdentityStatus.cs" />
+    <Compile Include="kakaocert\MultiSign.cs" />
+    <Compile Include="kakaocert\MultiSignStatus.cs" />
+    <Compile Include="kakaocert\IdentityReceipt.cs" />
+    <Compile Include="kakaocert\CMSReceipt.cs" />
+    <Compile Include="kakaocert\SignReceipt.cs" />
+    <Compile Include="kakaocert\MultiSignReceipt.cs" />
+    <Compile Include="kakaocert\MultiSignResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Linkhub\Linkhub.csproj">
