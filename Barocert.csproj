@@ -71,10 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarocertException.cs" />
-    <Compile Include="bzip2\src\BZip2Constants.cs" />
-    <Compile Include="bzip2\src\CBZip2InputStream.cs" />
-    <Compile Include="bzip2\src\CBZip2OutputStream.cs" />
-    <Compile Include="bzip2\src\CRC.cs" />
     <Compile Include="crypto\src\asn1\anssi\ANSSINamedCurves.cs" />
     <Compile Include="crypto\src\asn1\anssi\ANSSIObjectIdentifiers.cs" />
     <Compile Include="crypto\src\asn1\Asn1Encodable.cs" />
