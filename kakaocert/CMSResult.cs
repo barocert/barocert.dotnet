@@ -10,7 +10,7 @@ namespace Kakaocert
         [DataMember]
         public String receiptID;
         [DataMember]
-        public String state;
+        public int state;
         [DataMember]
         public String signedData;
         [DataMember]
