@@ -316,17 +316,14 @@ namespace Kakaocert
                 aes.Mode = CipherMode.CBC;
                 aes.Padding = PaddingMode.PKCS7;
 
-                // 스트림 변환을 수행할 해독을 만든다.
                 ICryptoTransform enc = aes.CreateEncryptor(aes.Key, aes.IV);
 
-                // 암호화에 사용되는 스트림을 만든다.
                 using (MemoryStream ms = new MemoryStream())
                 {
                     using (CryptoStream cs = new CryptoStream(ms, enc, CryptoStreamMode.Write))
                     {
                         using (StreamWriter sw = new StreamWriter(cs))
                         {
-                            // 암호화 할 데이터를 스트림에 넣는다.
                             sw.Write(plainText);
                         }
 
@@ -359,7 +356,17 @@ namespace Kakaocert
         public IdentityReceipt requestIdentity(String ClientCode, Identity identity)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
-            if (identity == null) throw new BarocertException(-99999999, "본인인증 요청정보가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
+            if (null == identity) throw new BarocertException(-99999999, "본인인증 요청정보가 입력되지 않았습니다.");
+
+            if (String.IsNullOrEmpty(identity.receiverHP)) throw new BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(identity.receiverName)) throw new BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(identity.receiverBirthday)) throw new BarocertException(-99999999, "생년월일이 입력되지 않았습니다.");
+
+            if (null == identity.expireIn) throw new BarocertException(-99999999, "만료시간이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(identity.reqTitle)) throw new BarocertException(-99999999, "인증요청 메시지 제목이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(identity.token)) throw new BarocertException(-99999999, "토큰 원문이 입력되지 않았습니다.");
 
             String PostData = toJsonString(identity);
 
@@ -393,7 +400,17 @@ namespace Kakaocert
         public SignReceipt requestSign(String ClientCode, Sign sign)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
-            if (sign == null) throw new BarocertException(-99999999, "전자서명 요청정보가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
+            if (null == sign) throw new BarocertException(-99999999, "전자서명 요청정보가 입력되지 않았습니다.");
+
+            if (String.IsNullOrEmpty(sign.receiverHP)) throw new BarocertException(-99999999,"수신자 휴대폰번호가 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(sign.receiverName)) throw new BarocertException(-99999999,"수신자 성명이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(sign.receiverBirthday)) throw new BarocertException(-99999999,"생년월일이 입력되지 않았습니다.");
+            if (null == sign.expireIn) throw new BarocertException(-99999999,"만료시간이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(sign.reqTitle)) throw new BarocertException(-99999999,"인증요청 메시지 제목이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(sign.token)) throw new BarocertException(-99999999,"토큰 원문이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(sign.tokenType)) throw new BarocertException(-99999999,"원문 유형이 입력되지 않았습니다.");
 
             String PostData = toJsonString(sign);
 
@@ -427,7 +444,17 @@ namespace Kakaocert
         public MultiSignReceipt requestMultiSign(String ClientCode, MultiSign multiSign)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
-            if (multiSign == null) throw new BarocertException(-99999999, "전자서명 요청정보가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
+            if (null == multiSign) throw new BarocertException(-99999999, "전자서명 요청정보가 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(multiSign.receiverHP)) throw new BarocertException(-99999999,"수신자 휴대폰번호가 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(multiSign.receiverName)) throw new BarocertException(-99999999,"수신자 성명이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(multiSign.receiverBirthday)) throw new BarocertException(-99999999,"생년월일이 입력되지 않았습니다.");
+            if (null == multiSign.expireIn) throw new BarocertException(-99999999,"만료시간이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(multiSign.reqTitle)) throw new BarocertException(-99999999,"인증요청 메시지 제목이 입력되지 않았습니다.");
+            if (isNullorEmptyTitle(multiSign.tokens)) throw new BarocertException(-99999999,"인증요청 메시지 제목이 입력되지 않았습니다.");
+            if (isNullorEmptyToken(multiSign.tokens)) throw new BarocertException(-99999999,"토큰 원문이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(multiSign.tokenType)) throw new BarocertException(-99999999,"원문 유형이 입력되지 않았습니다.");
 
             String PostData = toJsonString(multiSign);
 
@@ -463,7 +490,20 @@ namespace Kakaocert
         public CMSReceipt requestCMS(String ClientCode, CMS cms)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
-            if (cms == null) throw new BarocertException(-99999999, "자동이체 출금동의 요청정보가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
+            if (null == cms) throw new BarocertException(-99999999, "자동이체 출금동의 요청정보가 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.receiverHP)) throw new BarocertException(-99999999,"수신자 휴대폰번호가 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.receiverName)) throw new BarocertException(-99999999,"수신자 성명이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.receiverBirthday)) throw new BarocertException(-99999999,"생년월일이 입력되지 않았습니다.");
+            if (null == cms.expireIn) throw new BarocertException(-99999999,"만료시간이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.reqTitle)) throw new BarocertException(-99999999,"인증요청 메시지 제목이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.requestCorp)) throw new BarocertException(-99999999,"청구기관명이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.bankName)) throw new BarocertException(-99999999,"은행명이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.bankAccountNum)) throw new BarocertException(-99999999,"계좌번호가 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.bankAccountName)) throw new BarocertException(-99999999,"예금주명이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.bankAccountBirthday)) throw new BarocertException(-99999999,"예금주 생년월일이 입력되지 않았습니다.");
+            if (String.IsNullOrEmpty(cms.bankServiceType)) throw new BarocertException(-99999999, "출금 유형이 입력되지 않았습니다.");
 
             String PostData = toJsonString(cms);
 
@@ -493,6 +533,24 @@ namespace Kakaocert
 
             return httppost<CMSResult>("/KAKAO/CMS/" + ClientCode + "/" + ReceiptId);
         }
+
+        public bool isNullorEmptyTitle(List<MultiSignTokens> multiSignTokens){
+            if(multiSignTokens == null) return true;
+            foreach(MultiSignTokens signTokens in multiSignTokens ){
+                if(signTokens == null) return true;
+                if(String.IsNullOrEmpty(signTokens.reqTitle)) return true;
+            }
+            return false;
+        }
+
+        public bool isNullorEmptyToken(List<MultiSignTokens> multiSignTokens){
+            if(multiSignTokens == null) return true;
+            foreach(MultiSignTokens signTokens in multiSignTokens ){
+                if(signTokens == null) return true;
+                if(String.IsNullOrEmpty(signTokens.token)) return true;
+            }
+        return false;
+    }
 
     }
 }

@@ -623,7 +623,7 @@
     <Compile Include="kakaocert\MultiSignResult.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Linkhub\Linkhub.csproj">
+    <ProjectReference Include="..\barocert.example.aspdotnet\Linkhub\Linkhub.csproj">
       <Project>{F960F70D-9C37-46F8-A1D4-938A81BE9855}</Project>
       <Name>Linkhub</Name>
     </ProjectReference>
