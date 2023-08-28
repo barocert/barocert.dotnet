@@ -582,8 +582,14 @@
     <Compile Include="crypto\src\util\Platform.cs" />
     <Compile Include="crypto\src\util\Strings.cs" />
     <Compile Include="crypto\src\util\Times.cs" />
+    <Compile Include="BaseService.cs" />
     <Compile Include="kakaocert\KakaocertService.cs" />
     <Compile Include="kakaocert\MultiSignTokens.cs" />
+    <Compile Include="kakaocert\LoginResult.cs" />
+    <Compile Include="passcert\CMSVerify.cs" />
+    <Compile Include="passcert\IdentityVerify.cs" />
+    <Compile Include="passcert\LoginVerify.cs" />
+    <Compile Include="passcert\SignVerify.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -605,7 +611,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="kakaocert\CMS.cs" />
-    <Compile Include="kakaocert\Response.cs" />
+    <Compile Include="Response.cs" />
     <Compile Include="kakaocert\Sign.cs" />
     <Compile Include="kakaocert\Identity.cs" />
     <Compile Include="kakaocert\CMSResult.cs" />
@@ -621,6 +627,23 @@
     <Compile Include="kakaocert\SignReceipt.cs" />
     <Compile Include="kakaocert\MultiSignReceipt.cs" />
     <Compile Include="kakaocert\MultiSignResult.cs" />
+    <Compile Include="passcert\CMS.cs" />
+    <Compile Include="passcert\CMSReceipt.cs" />
+    <Compile Include="passcert\CMSResult.cs" />
+    <Compile Include="passcert\CMSStatus.cs" />
+    <Compile Include="passcert\Identity.cs" />
+    <Compile Include="passcert\IdentityReceipt.cs" />
+    <Compile Include="passcert\IdentityResult.cs" />
+    <Compile Include="passcert\IdentityStatus.cs" />
+    <Compile Include="passcert\PasscertService.cs" />
+    <Compile Include="passcert\Login.cs" />
+    <Compile Include="passcert\LoginReceipt.cs" />
+    <Compile Include="passcert\LoginResult.cs" />
+    <Compile Include="passcert\LoginStatus.cs" />
+    <Compile Include="passcert\Sign.cs" />
+    <Compile Include="passcert\SignReceipt.cs" />
+    <Compile Include="passcert\SignResult.cs" />
+    <Compile Include="passcert\SignStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\barocert.example.aspdotnet\Linkhub\Linkhub.csproj">

@@ -3,7 +3,7 @@ using System.Text;
 using System.Runtime.Serialization;
 
 
-namespace Kakaocert
+namespace Barocert
 {
     [DataContract]
     public class Response
