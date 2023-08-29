@@ -72,11 +72,7 @@ namespace Barocert
         public String AuthURL
         {
             set { _LinkhubAuth.AuthURL = value; }
-<<<<<<< HEAD
             get { return _LinkhubAuth.AuthURL; }
-=======
-            get { return _LinkhubAuth.AuthURL; }   
->>>>>>> 996969b9e3df05e0527024c12b8c397b1dbee018
         }
 
         public BaseService(String LinkID, String SecretKey)
@@ -120,12 +116,8 @@ namespace Barocert
         {
             get
             {
-<<<<<<< HEAD
                 if (_ServiceURL != null)
                 {
-=======
-                if (_ServiceURL != null) {
->>>>>>> 996969b9e3df05e0527024c12b8c397b1dbee018
                     return _ServiceURL;
                 }
 
@@ -381,12 +373,6 @@ namespace Barocert
             new RNGCryptoServiceProvider().GetBytes(nonce);
             return nonce;
         }
-
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 996969b9e3df05e0527024c12b8c397b1dbee018
 
     }
 }

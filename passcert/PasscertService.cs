@@ -31,11 +31,6 @@ namespace Passcert
             this.AddScope("443");
             this.AddScope("444");
         }
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 996969b9e3df05e0527024c12b8c397b1dbee018
         public IdentityReceipt requestIdentity(String ClientCode, Identity identity)
         {
             if (String.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
