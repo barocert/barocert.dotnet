@@ -23,15 +23,9 @@ namespace Kakaocert
 
     public class KakaocertService : BaseService
     {
-<<<<<<< HEAD
 
         public KakaocertService(String LinkID, String SecretKey)
             : base(LinkID, SecretKey)
-=======
-    
-        public KakaocertService(String LinkID, String SecretKey)
-                :base(LinkID, SecretKey)
->>>>>>> 996969b9e3df05e0527024c12b8c397b1dbee018
         {
             this.AddScope("401");
             this.AddScope("402");
@@ -231,7 +225,6 @@ namespace Kakaocert
             return httppost<LoginResult>("/KAKAO/Login/" + ClientCode + "/" + txID);
         }
 
-<<<<<<< HEAD
         public bool isNullorEmptyTitle(List<MultiSignTokens> multiSignTokens)
         {
             if (multiSignTokens == null) return true;
@@ -239,13 +232,6 @@ namespace Kakaocert
             {
                 if (signTokens == null) return true;
                 if (String.IsNullOrEmpty(signTokens.reqTitle)) return true;
-=======
-        public bool isNullorEmptyTitle(List<MultiSignTokens> multiSignTokens){
-            if(multiSignTokens == null) return true;
-            foreach(MultiSignTokens signTokens in multiSignTokens ){
-                if(signTokens == null) return true;
-                if(String.IsNullOrEmpty(signTokens.reqTitle)) return true;
->>>>>>> 996969b9e3df05e0527024c12b8c397b1dbee018
             }
             return false;
         }
