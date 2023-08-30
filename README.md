@@ -1,13 +1,13 @@
 # barocert.dotnet
 Barocert SDK for dontet
-# Reference 
+## Reference 
 - The Bouncy Castle Cryptography Library For .NET (v.1.9.0)
   - site : www.bouncycastle.org/csharp 
   - source : https://github.com/bcgit/bc-csharp
   - MIT License
 
-# Version
+## Version
 - v1.0.0 (2023-05-03) 
-  : Ä«Ä«¿À½áÆ®(º»ÀÎÀÎÁõ, ÀüÀÚ¼­¸í, Ãâ±İµ¿ÀÇ)
+  : ì¹´ì¹´ì˜¤ì¨íŠ¸(ë³¸ì¸ì¸ì¦, ì „ìì„œëª…, ì¶œê¸ˆë™ì˜)
 - v1.1.0 (2023-08-30) 
-  : ÆĞ½º½áÆ®(º»ÀÎÀÎÁõ, ÀüÀÚ¼­¸í, Ãâ±İµ¿ÀÇ), Ä«Ä«¿À½áÆ®(°£Æí·Î±×ÀÎ)
+  : íŒ¨ìŠ¤ì¨íŠ¸(ë³¸ì¸ì¸ì¦, ì „ìì„œëª…, ì¶œê¸ˆë™ì˜), ì¹´ì¹´ì˜¤ì¨íŠ¸(ê°„í¸ë¡œê·¸ì¸)
