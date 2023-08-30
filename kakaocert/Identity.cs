@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace Kakaocert
+namespace Barocert.Kakaocert
 {
-
     [DataContract]
     public class Identity
     {

@@ -4,7 +4,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
 
-namespace Kakaocert
+namespace Barocert.Kakaocert
 {
     [DataContract]
     public class MultiSignResult

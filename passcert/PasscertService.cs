@@ -17,10 +17,8 @@ using Linkhub.BouncyCastle.Crypto.Engines;
 using Linkhub.BouncyCastle.Crypto.Parameters;
 using Linkhub.BouncyCastle.Security;
 
-
-namespace Passcert
+namespace Barocert.Passcert
 {
-
     public class PasscertService : BaseService
     {
         public PasscertService(String LinkID, String SecretKey)

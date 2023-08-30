@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace Passcert
+namespace Barocert.Passcert
 {
-
     [DataContract]
     public class Identity
     {

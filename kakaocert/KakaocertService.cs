@@ -17,10 +17,8 @@ using Linkhub.BouncyCastle.Crypto.Engines;
 using Linkhub.BouncyCastle.Crypto.Parameters;
 using Linkhub.BouncyCastle.Security;
 
-
-namespace Kakaocert
+namespace Barocert.Kakaocert
 {
-
     public class KakaocertService : BaseService
     {
 

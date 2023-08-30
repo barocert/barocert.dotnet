@@ -3,7 +3,7 @@ using System;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace Passcert
+namespace Barocert.Passcert
 {
     [DataContract]
     public class SignResult

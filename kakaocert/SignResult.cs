@@ -3,7 +3,7 @@ using System;
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace Kakaocert
+namespace Barocert.Kakaocert
 {
     [DataContract]
     public class SignResult

@@ -4,7 +4,7 @@ using System.Text;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
 
-namespace Passcert
+namespace Barocert.Passcert
 {
     [DataContract]
     public class LoginResult

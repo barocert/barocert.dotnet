@@ -2,14 +2,14 @@
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace Passcert 
+namespace Barocert.Passcert
 {
         [DataContract]
         public class CMSVerify
         {
-        [DataMember]
-        public String receiverHP;
-        [DataMember]
-        public String receiverName;
+            [DataMember]
+            public String receiverHP;
+            [DataMember]
+            public String receiverName;
         }
 }
