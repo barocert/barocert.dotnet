@@ -2,7 +2,7 @@
 using System.Text;
 using System.Runtime.Serialization;
 
-namespace Passcert
+namespace Passcert 
 {
         [DataContract]
         public class CMSVerify

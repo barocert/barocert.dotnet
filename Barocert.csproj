@@ -70,7 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BarocertException.cs" />
+    <Compile Include="base\BarocertException.cs" />
     <Compile Include="crypto\src\asn1\anssi\ANSSINamedCurves.cs" />
     <Compile Include="crypto\src\asn1\anssi\ANSSIObjectIdentifiers.cs" />
     <Compile Include="crypto\src\asn1\Asn1Encodable.cs" />
@@ -582,7 +582,7 @@
     <Compile Include="crypto\src\util\Platform.cs" />
     <Compile Include="crypto\src\util\Strings.cs" />
     <Compile Include="crypto\src\util\Times.cs" />
-    <Compile Include="BaseService.cs" />
+    <Compile Include="base\BaseService.cs" />
     <Compile Include="kakaocert\KakaocertService.cs" />
     <Compile Include="kakaocert\MultiSignTokens.cs" />
     <Compile Include="kakaocert\LoginResult.cs" />
@@ -611,7 +611,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="kakaocert\CMS.cs" />
-    <Compile Include="Response.cs" />
+    <Compile Include="base\Response.cs" />
     <Compile Include="kakaocert\Sign.cs" />
     <Compile Include="kakaocert\Identity.cs" />
     <Compile Include="kakaocert\CMSResult.cs" />
