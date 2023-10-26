@@ -8,7 +8,7 @@ namespace Barocert.Navercert
     public class SignReceipt
     {
         [DataMember]
-        public String receiptId;
+        public String receiptID;
         [DataMember]
         public String scheme;
         [DataMember]

@@ -10,6 +10,8 @@ namespace Barocert.Passcert
         [DataMember]
         public String receiptId;
         [DataMember]
+        public String receiptID;
+        [DataMember]
         public String scheme;
         [DataMember]
         public String marketUrl;

@@ -6,7 +6,6 @@ using System.Runtime.Serialization;
 
 namespace Barocert.Navercert
 {
-
     [DataContract]
     public class MultiSignStatus
     {

@@ -28,6 +28,11 @@ namespace Barocert.Navercert
         [DataMember]
         public bool appUseYN;
         [DataMember]
-        public List<MultiSignTokens> tokens;
+        public List<MultiSignTokens> tokens = new List<MultiSignTokens>();
+
+        public void addToken(MultiSignTokens token)
+        {
+            tokens.Add(token);
+        }
     }
 }

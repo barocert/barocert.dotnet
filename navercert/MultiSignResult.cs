@@ -2,6 +2,7 @@
 using System;
 using System.Text;
 using System.Runtime.Serialization;
+using System.Collections.Generic;
 
 namespace Barocert.Navercert
 {
