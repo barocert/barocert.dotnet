@@ -126,8 +126,7 @@ namespace Barocert.Navercert
             if (String.IsNullOrEmpty(multiSign.reqMessage)) throw new BarocertException(-99999999, "인증요청 메시지가 입력되지 않았습니다.");
             if (null == multiSign.expireIn) throw new BarocertException(-99999999, "만료시간이 입력되지 않았습니다.");
             if (isNullorEmptyToken(multiSign.tokens)) throw new BarocertException(-99999999, "토큰 원문이 입력되지 않았습니다.");
-            if (String.IsNullOrEmpty(multiSign.tokenType)) throw new BarocertException(-99999999, "원문 유형이 입력되지 않았습니다.");
-
+            if (isNullorEmptyTokenType(multiSign.tokens)) throw new BarocertException(-99999999, "원문 유형이 입력되지 않았습니다.");
             String PostData = toJsonString(multiSign);
 
             return httppost<MultiSignReceipt>("/NAVER/MultiSign/" + ClientCode, PostData);

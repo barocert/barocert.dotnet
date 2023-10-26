@@ -585,6 +585,11 @@
     <Compile Include="kakaocert\KakaocertService.cs" />
     <Compile Include="kakaocert\MultiSignTokens.cs" />
     <Compile Include="kakaocert\LoginResult.cs" />
+    <Compile Include="navercert\MultiSign.cs" />
+    <Compile Include="navercert\MultiSignReceipt.cs" />
+    <Compile Include="navercert\MultiSignResult.cs" />
+    <Compile Include="navercert\MultiSignStatus.cs" />
+    <Compile Include="navercert\MultiSignTokens.cs" />
     <Compile Include="passcert\CMSVerify.cs" />
     <Compile Include="passcert\IdentityVerify.cs" />
     <Compile Include="passcert\LoginVerify.cs" />
@@ -643,6 +648,15 @@
     <Compile Include="passcert\SignReceipt.cs" />
     <Compile Include="passcert\SignResult.cs" />
     <Compile Include="passcert\SignStatus.cs" />
+    <Compile Include="navercert\Identity.cs" />
+    <Compile Include="navercert\IdentityReceipt.cs" />
+    <Compile Include="navercert\IdentityResult.cs" />
+    <Compile Include="navercert\IdentityStatus.cs" />
+    <Compile Include="navercert\NavercertService.cs" />
+    <Compile Include="navercert\Sign.cs" />
+    <Compile Include="navercert\SignReceipt.cs" />
+    <Compile Include="navercert\SignResult.cs" />
+    <Compile Include="navercert\SignStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\barocert.example.aspdotnet\Linkhub\Linkhub.csproj">
@@ -674,4 +688,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-</Project> 
+</Project>
