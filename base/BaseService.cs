@@ -16,6 +16,8 @@ using Linkhub.BouncyCastle.Crypto.Engines;
 using Linkhub.BouncyCastle.Crypto.Parameters;
 using Linkhub.BouncyCastle.Security;
 
+using Barocert.Kakaocert;
+using Barocert.Navercert;
 
 namespace Barocert
 {
@@ -300,6 +302,50 @@ namespace Barocert
                 }
                 throw new BarocertException(-99999999, we.Message);
             }
+        }
+
+        public bool isNullorEmptyTitle(List<Barocert.Kakaocert.MultiSignTokens> multiSignTokens)
+        {
+            if (multiSignTokens == null) return true;
+            foreach (Barocert.Kakaocert.MultiSignTokens signTokens in multiSignTokens)
+            {
+                if (signTokens == null) return true;
+                if (String.IsNullOrEmpty(signTokens.reqTitle)) return true;
+            }
+            return false;
+        }
+
+        public bool isNullorEmptyToken(List<Barocert.Kakaocert.MultiSignTokens> multiSignTokens)
+        {
+            if (multiSignTokens == null) return true;
+            foreach (Barocert.Kakaocert.MultiSignTokens signTokens in multiSignTokens)
+            {
+                if (signTokens == null) return true;
+                if (String.IsNullOrEmpty(signTokens.token)) return true;
+            }
+            return false;
+        }
+
+        public bool isNullorEmptyTokenType(List<Barocert.Navercert.MultiSignTokens> multiSignTokens)
+        {
+            if (multiSignTokens == null) return true;
+            foreach (Barocert.Navercert.MultiSignTokens signTokens in multiSignTokens)
+            {
+                if (signTokens == null) return true;
+                if (String.IsNullOrEmpty(signTokens.tokenType)) return true;
+            }
+            return false;
+        }
+
+        public bool isNullorEmptyToken(List<Barocert.Navercert.MultiSignTokens> multiSignTokens)
+        {
+            if (multiSignTokens == null) return true;
+            foreach (Barocert.Navercert.MultiSignTokens signTokens in multiSignTokens)
+            {
+                if (signTokens == null) return true;
+                if (String.IsNullOrEmpty(signTokens.token)) return true;
+            }
+            return false;
         }
 
         public String encrypt(String plainText)
