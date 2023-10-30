@@ -8,8 +8,6 @@ namespace Barocert.Passcert
     public class SignReceipt
     {
         [DataMember]
-        public String receiptId;
-        [DataMember]
         public String receiptID;
         [DataMember]
         public String scheme;
