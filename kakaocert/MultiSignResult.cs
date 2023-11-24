@@ -10,12 +10,12 @@ namespace Barocert.Kakaocert
     public class MultiSignResult
     {
         [DataMember]
-        public String receiptID;
+        public string receiptID;
         [DataMember]
         public int state;
         [DataMember]
-        public List<String> multiSignedData;
+        public List<string> multiSignedData;
         [DataMember]
-        public String ci;
+        public string ci;
     }
 }

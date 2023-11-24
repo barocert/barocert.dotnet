@@ -10,41 +10,41 @@ namespace Barocert.Passcert
     public class LoginStatus
     {
         [DataMember]
-        public String receiptID;
+        public string receiptID;
         [DataMember]
-        public String clientCode;
+        public string clientCode;
         [DataMember]
         public int state;
         [DataMember]
         public int expireIn;
         [DataMember]
-        public String callCenterName;
+        public string callCenterName;
         [DataMember]
-        public String callCenterNum;
+        public string callCenterNum;
         [DataMember]
-        public String reqTitle;
+        public string reqTitle;
         [DataMember]
-        public String reqMessage;
+        public string reqMessage;
         [DataMember]
-        public String requestDT;
+        public string requestDT;
         [DataMember]
-        public String completeDT;
+        public string completeDT;
         [DataMember]
-        public String expireDT;
+        public string expireDT;
         [DataMember]
-        public String rejectDT;
+        public string rejectDT;
         [DataMember]
-        public String tokenType;
+        public string tokenType;
         [DataMember]
         public bool userAgreementYN;
         [DataMember]
         public bool receiverInfoYN;
         [DataMember]
-        public String telcoType;
+        public string telcoType;
         [DataMember]
-        public String deviceOSType;
+        public string deviceOSType;
         [DataMember]
-        public String scheme;
+        public string scheme;
         [DataMember]
         public bool appUseYN;
     }

@@ -8,17 +8,17 @@ namespace Barocert.Passcert
     public class CMS
     {
         [DataMember]
-        public String receiverHP;
+        public string receiverHP;
         [DataMember]
-        public String receiverName;
+        public string receiverName;
         [DataMember]
-        public String receiverBirthday;
+        public string receiverBirthday;
         [DataMember]
-        public String reqTitle;
+        public string reqTitle;
         [DataMember]
-        public String reqMessage;
+        public string reqMessage;
         [DataMember]
-        public String callCenterNum;
+        public string callCenterNum;
         [DataMember]
         public int? expireIn;
         [DataMember]
@@ -26,19 +26,19 @@ namespace Barocert.Passcert
         [DataMember]
         public bool receiverInfoYN;
         [DataMember]
-        public String bankName;
+        public string bankName;
         [DataMember]
-        public String bankAccountNum;
+        public string bankAccountNum;
         [DataMember]
-        public String bankAccountName;
+        public string bankAccountName;
         [DataMember]
-        public String bankWithdraw;
+        public string bankWithdraw;
         [DataMember]
-        public String bankServiceType;
+        public string bankServiceType;
         [DataMember]
-        public String telcoType;
+        public string telcoType;
         [DataMember]
-        public String deviceOSType;
+        public string deviceOSType;
         [DataMember]
         public bool appUseYN;
         [DataMember]

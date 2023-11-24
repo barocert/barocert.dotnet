@@ -8,9 +8,9 @@ namespace Barocert.Kakaocert
     public class MultiSignReceipt
     {
         [DataMember]
-        public String receiptID;
+        public string receiptID;
         [DataMember]
-        public String scheme;
+        public string scheme;
     }
 
 }

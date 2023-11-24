@@ -11,7 +11,7 @@ namespace Barocert
         [DataMember]
         public long code;
         [DataMember]
-        public String message;
+        public string message;
     }
 
 }

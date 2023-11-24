@@ -8,19 +8,19 @@ namespace Barocert.Navercert
     public class Identity
     {
         [DataMember]
-        public String receiverHP;
+        public string receiverHP;
         [DataMember]
-        public String receiverName;
+        public string receiverName;
         [DataMember]
-        public String receiverBirthday;
+        public string receiverBirthday;
         [DataMember]
-        public String callCenterNum;
+        public string callCenterNum;
         [DataMember]
         public int? expireIn;
         [DataMember]
-        public String returnURL;
+        public string returnURL;
         [DataMember]
-        public String deviceOSType;
+        public string deviceOSType;
         [DataMember]
         public bool appUseYN;
     }

@@ -25,22 +25,22 @@ namespace Barocert
     public abstract class BaseService
     {
         private const string ServiceID = "BAROCERT";
-        private const String ServiceURL_Default = "https://barocert.linkhub.co.kr";
-        private const String ServiceURL_Static = "https://static-barocert.linkhub.co.kr";
+        private const string ServiceURL_Default = "https://barocert.linkhub.co.kr";
+        private const string ServiceURL_Static = "https://static-barocert.linkhub.co.kr";
 
-        private const String APIVERSION = "2.1";
-        private const String CRLF = "\r\n";
+        private const string APIVERSION = "2.1";
+        private const string CRLF = "\r\n";
 
-        private Dictionary<String, Token> _tokenTable = new Dictionary<String, Token>();
+        private Dictionary<string, Token> _tokenTable = new Dictionary<string, Token>();
         private bool _IPRestrictOnOff;
         private bool _UseStaticIP;
         private bool _UseLocalTimeYN;
-        private String _LinkID;
-        private String _SecretKey;
+        private string _LinkID;
+        private string _SecretKey;
         private Authority _LinkhubAuth;
         private string _ServiceURL;
         private string _AuthURL;
-        private List<String> _Scopes = new List<string>();
+        private List<string> _Scopes = new List<string>();
 
         private const int CBC_IV_LENGTH = 16;
         private const int GCM_IV_LENGTH = 12;
@@ -65,19 +65,19 @@ namespace Barocert
             get { return _UseLocalTimeYN; }
         }
 
-        public String ServiceURL
+        public string ServiceURL
         {
             set { _ServiceURL = value; }
             get { return _ServiceURL; }
         }
 
-        public String AuthURL
+        public string AuthURL
         {
             set { _LinkhubAuth.AuthURL = value; }
             get { return _LinkhubAuth.AuthURL; }
         }
 
-        public BaseService(String LinkID, String SecretKey)
+        public BaseService(string LinkID, string SecretKey)
         {
             _LinkhubAuth = new Authority(LinkID, SecretKey);
             _Scopes.Add("partner");
@@ -92,7 +92,7 @@ namespace Barocert
             _Scopes.Add(scope);
         }
 
-        protected String toJsonString(Object graph)
+        protected string toJsonString(Object graph)
         {
             using (MemoryStream ms = new MemoryStream())
             {
@@ -106,7 +106,7 @@ namespace Barocert
         {
             using (StreamReader reader = new StreamReader(jsonStream, Encoding.UTF8, true))
             {
-                String t = reader.ReadToEnd();
+                string t = reader.ReadToEnd();
 
                 JavaScriptSerializer jss = new JavaScriptSerializer();
 
@@ -114,7 +114,7 @@ namespace Barocert
             }
         }
 
-        protected String getURL
+        protected string getURL
         {
             get
             {
@@ -134,7 +134,7 @@ namespace Barocert
             }
         }
 
-        private String getSession_Token()
+        private string getSession_Token()
         {
             Token _token = null;
 
@@ -184,13 +184,13 @@ namespace Barocert
             return _token.session_token;
         }
 
-        protected T httpget<T>(String url)
+        protected T httpget<T>(string url)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getURL + url);
 
-            if (String.IsNullOrEmpty(_LinkID) == false)
+            if (string.IsNullOrEmpty(_LinkID) == false)
             {
-                String bearerToken = getSession_Token();
+                string bearerToken = getSession_Token();
                 request.Headers.Add("Authorization", "Bearer" + " " + bearerToken);
             }
 
@@ -227,12 +227,12 @@ namespace Barocert
 
         }
 
-        protected T httppost<T>(String url)
+        protected T httppost<T>(string url)
         {
             return httppost<T>(url, null);
         }
 
-        protected T httppost<T>(String url, String PostData)
+        protected T httppost<T>(string url, string PostData)
         {
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(getURL + url);
@@ -241,9 +241,9 @@ namespace Barocert
             request.ContentType = "application/json;";
 
 
-            String bearerToken = getSession_Token();
+            string bearerToken = getSession_Token();
 
-            String xDate = _LinkhubAuth.getTime(UseStaticIP, false, false);
+            string xDate = _LinkhubAuth.getTime(UseStaticIP, false, false);
 
 
             request.Headers.Add("Authorization", "Bearer" + " " + bearerToken);
@@ -257,12 +257,12 @@ namespace Barocert
 
             request.Method = "POST";
 
-            if (String.IsNullOrEmpty(PostData)) PostData = "";
+            if (string.IsNullOrEmpty(PostData)) PostData = "";
 
             byte[] btPostDAta = Encoding.UTF8.GetBytes(PostData);
 
-            String HMAC_target = "POST\n";
-            if (false == String.IsNullOrEmpty(PostData))
+            string HMAC_target = "POST\n";
+            if (false == string.IsNullOrEmpty(PostData))
             {
                 HMAC_target += Convert.ToBase64String(SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(PostData))) + "\n";
             }
@@ -270,7 +270,7 @@ namespace Barocert
             HMAC_target += url + "\n";
 
             HMACSHA256 hmac = new HMACSHA256(Convert.FromBase64String(_SecretKey));
-            String hmac_str = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(HMAC_target)));
+            string hmac_str = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(HMAC_target)));
 
             request.Headers.Add("x-bc-version", APIVERSION);
             request.Headers.Add("x-bc-auth", hmac_str);
@@ -310,7 +310,13 @@ namespace Barocert
             foreach (Barocert.Kakaocert.MultiSignTokens signTokens in multiSignTokens)
             {
                 if (signTokens == null) return true;
-                if (String.IsNullOrEmpty(signTokens.reqTitle)) return true;
+                if (string.IsNullOrEmpty(signTokens.signTitle))
+                {
+                    if (string.IsNullOrEmpty(signTokens.reqTitle))
+                    {
+                        return true;
+                    }
+                }
             }
             return false;
         }
@@ -321,7 +327,7 @@ namespace Barocert
             foreach (Barocert.Kakaocert.MultiSignTokens signTokens in multiSignTokens)
             {
                 if (signTokens == null) return true;
-                if (String.IsNullOrEmpty(signTokens.token)) return true;
+                if (string.IsNullOrEmpty(signTokens.token)) return true;
             }
             return false;
         }
@@ -332,7 +338,7 @@ namespace Barocert
             foreach (Barocert.Navercert.MultiSignTokens signTokens in multiSignTokens)
             {
                 if (signTokens == null) return true;
-                if (String.IsNullOrEmpty(signTokens.tokenType)) return true;
+                if (string.IsNullOrEmpty(signTokens.tokenType)) return true;
             }
             return false;
         }
@@ -343,17 +349,17 @@ namespace Barocert
             foreach (Barocert.Navercert.MultiSignTokens signTokens in multiSignTokens)
             {
                 if (signTokens == null) return true;
-                if (String.IsNullOrEmpty(signTokens.token)) return true;
+                if (string.IsNullOrEmpty(signTokens.token)) return true;
             }
             return false;
         }
 
-        public String encrypt(String plainText)
+        public string encrypt(string plainText)
         {
             return encGCM(plainText);
         }
 
-        private String encGCM(String plainText)
+        private string encGCM(string plainText)
         {
             var cipher = new GcmBlockCipher(new AesEngine());
             byte[] iv = newGCMbyte();
@@ -371,7 +377,7 @@ namespace Barocert
             return Convert.ToBase64String(concatted);
         }
 
-        private String encCBC(String plainText)
+        private string encCBC(string plainText)
         {
             byte[] iv = newCBCbyte();
             byte[] concatted = null;

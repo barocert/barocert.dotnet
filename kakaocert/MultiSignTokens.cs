@@ -8,8 +8,10 @@ namespace Barocert.Kakaocert
     public class MultiSignTokens
     {
         [DataMember]
-        public String reqTitle;
+        public string reqTitle;
         [DataMember]
-        public String token;
+        public string signTitle;
+        [DataMember]
+        public string token;
     }
 }

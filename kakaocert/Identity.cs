@@ -8,21 +8,23 @@ namespace Barocert.Kakaocert
     public class Identity
     {
         [DataMember]
-        public String receiverHP;
+        public string receiverHP;
         [DataMember]
-        public String receiverName;
+        public string receiverName;
         [DataMember]
-        public String receiverBirthday;
+        public string receiverBirthday;
         [DataMember]
-        public String ci;
+        public string ci;
         [DataMember]
-        public String reqTitle;
+        public string reqTitle;
+        [DataMember]
+        public string extraMessage;
         [DataMember]
         public int? expireIn;
         [DataMember]
-        public String token;
+        public string token;
         [DataMember]
-        public String returnURL;
+        public string returnURL;
         [DataMember]
         public bool appUseYN;
     }

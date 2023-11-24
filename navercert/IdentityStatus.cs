@@ -10,25 +10,25 @@ namespace Barocert.Navercert
     public class IdentityStatus
     {
         [DataMember]
-        public String receiptID;
+        public string receiptID;
         [DataMember]
-        public String clientCode;
+        public string clientCode;
         [DataMember]
         public int state;
         [DataMember]
         public int expireIn;
         [DataMember]
-        public String callCenterName;
+        public string callCenterName;
         [DataMember]
-        public String callCenterNum;
+        public string callCenterNum;
         [DataMember]
-        public String returnURL;
+        public string returnURL;
         [DataMember]
-        public String expireDT;
+        public string expireDT;
         [DataMember]
-        public String scheme;
+        public string scheme;
         [DataMember]
-        public String deviceOSType;
+        public string deviceOSType;
         [DataMember]
         public bool appUseYN;
     }

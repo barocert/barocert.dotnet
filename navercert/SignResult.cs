@@ -9,26 +9,26 @@ namespace Barocert.Navercert
     public class SignResult
     {
         [DataMember]
-        public String receiptID;
+        public string receiptID;
         [DataMember]
         public int state;
         [DataMember]
-        public String signedData;
+        public string signedData;
         [DataMember]
-        public String ci;
+        public string ci;
         [DataMember]
-        public String receiverName;
+        public string receiverName;
         [DataMember]
-        public String receiverDay;
+        public string receiverDay;
         [DataMember]
-        public String receiverYear;
+        public string receiverYear;
         [DataMember]
-        public String receiverHP;
+        public string receiverHP;
         [DataMember]
-        public String receiverGender;
+        public string receiverGender;
         [DataMember]
-        public String receiverEmail;
+        public string receiverEmail;
         [DataMember]
-        public String receiverForeign;
+        public string receiverForeign;
     }
 }

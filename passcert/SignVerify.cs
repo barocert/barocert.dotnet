@@ -11,9 +11,9 @@ namespace Barocert.Passcert
     public class SignVerify
     {
         [DataMember]
-        public String receiverHP;
+        public string receiverHP;
         [DataMember]
-        public String receiverName;
+        public string receiverName;
 
     }
 }

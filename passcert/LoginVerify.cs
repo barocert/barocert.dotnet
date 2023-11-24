@@ -10,9 +10,9 @@ namespace Barocert.Passcert
     public class LoginVerify
     {
         [DataMember]
-        public String receiverHP;
+        public string receiverHP;
         [DataMember]
-        public String receiverName;
+        public string receiverName;
 
     }
 }

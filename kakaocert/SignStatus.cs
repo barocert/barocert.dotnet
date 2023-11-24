@@ -10,37 +10,37 @@ namespace Barocert.Kakaocert
     public class SignStatus
     {
         [DataMember]
-        public String receiptID;
+        public string receiptID;
         [DataMember]
-        public String clientCode;
+        public string clientCode;
         [DataMember]
         public int state;
         [DataMember]
         public int expireIn;
         [DataMember]
-        public String callCenterName;
+        public string callCenterName;
         [DataMember]
-        public String callCenterNum;
+        public string callCenterNum;
         [DataMember]
-        public String reqTitle;
+        public string reqTitle;
         [DataMember]
-        public String authCategory;
+        public string authCategory;
         [DataMember]
-        public String returnURL;
+        public string returnURL;
         [DataMember]
-        public String tokenType;
+        public string tokenType;
         [DataMember]
-        public String requestDT;
+        public string requestDT;
         [DataMember]
-        public String viewDT;
+        public string viewDT;
         [DataMember]
-        public String completeDT;
+        public string completeDT;
         [DataMember]
-        public String expireDT;
+        public string expireDT;
         [DataMember]
-        public String verifyDT;
+        public string verifyDT;
         [DataMember]
-        public String scheme;
+        public string scheme;
         [DataMember]
         public bool appUseYN;
     }

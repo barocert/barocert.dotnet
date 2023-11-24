@@ -8,31 +8,33 @@ namespace Barocert.Kakaocert
     public class CMS
     {
         [DataMember]
-        public String receiverHP;
+        public string receiverHP;
         [DataMember]
-        public String receiverName;
+        public string receiverName;
         [DataMember]
-        public String receiverBirthday;
+        public string receiverBirthday;
         [DataMember]
-        public String ci;
+        public string ci;
         [DataMember]
-        public String reqTitle;
+        public string reqTitle;
+        [DataMember]
+        public string extraMessage;
         [DataMember]
         public int? expireIn;
         [DataMember]
-        public String returnURL;
+        public string returnURL;
         [DataMember]
-        public String requestCorp;
+        public string requestCorp;
         [DataMember]
-        public String bankName;
+        public string bankName;
         [DataMember]
-        public String bankAccountNum;
+        public string bankAccountNum;
         [DataMember]
-        public String bankAccountName;
+        public string bankAccountName;
         [DataMember]
-        public String bankAccountBirthday;
+        public string bankAccountBirthday;
         [DataMember]
-        public String bankServiceType;
+        public string bankServiceType;
         [DataMember]
         public bool appUseYN;
 

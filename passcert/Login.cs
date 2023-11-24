@@ -8,29 +8,29 @@ namespace Barocert.Passcert
     public class Login
     {
         [DataMember]
-        public String receiverHP;
+        public string receiverHP;
         [DataMember]
-        public String receiverName;
+        public string receiverName;
         [DataMember]
-        public String receiverBirthday;
+        public string receiverBirthday;
         [DataMember]
-        public String reqTitle;
+        public string reqTitle;
         [DataMember]
-        public String reqMessage;
+        public string reqMessage;
         [DataMember]
-        public String callCenterNum;
+        public string callCenterNum;
         [DataMember]
         public int? expireIn;
         [DataMember]
-        public String token;
+        public string token;
         [DataMember]
         public bool userAgreementYN;
         [DataMember]
         public bool receiverInfoYN;
         [DataMember]
-        public String telcoType;
+        public string telcoType;
         [DataMember]
-        public String deviceOSType;
+        public string deviceOSType;
         [DataMember]
         public bool appUseYN;
         [DataMember]

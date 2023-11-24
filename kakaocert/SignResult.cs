@@ -9,12 +9,12 @@ namespace Barocert.Kakaocert
     public class SignResult
     {
         [DataMember]
-        public String receiptID;
+        public string receiptID;
         [DataMember]
         public int state;
         [DataMember]
-        public String signedData;
+        public string signedData;
         [DataMember]
-        public String ci;
+        public string ci;
     }
 }

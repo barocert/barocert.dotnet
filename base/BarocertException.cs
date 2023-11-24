@@ -11,7 +11,7 @@ namespace Barocert
             : base()
         {
         }
-        public BarocertException(long code, String Message)
+        public BarocertException(long code, string Message)
             : base(Message)
         {
             this._code = code;
