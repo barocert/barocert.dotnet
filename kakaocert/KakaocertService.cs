@@ -87,9 +87,7 @@ namespace Barocert.Kakaocert
             if (string.IsNullOrEmpty(sign.receiverName)) throw new BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.");
             if (string.IsNullOrEmpty(sign.receiverBirthday)) throw new BarocertException(-99999999, "생년월일이 입력되지 않았습니다.");
             if (null == sign.expireIn) throw new BarocertException(-99999999, "만료시간이 입력되지 않았습니다.");
-            if (string.IsNullOrEmpty(sign.signTitle))
-                if (string.IsNullOrEmpty(sign.reqTitle)) 
-                    throw new BarocertException(-99999999, "서명 요청 제목이 입력되지 않았습니다.");
+            if (string.IsNullOrEmpty(sign.signTitle) && string.IsNullOrEmpty(sign.reqTitle)) throw new BarocertException(-99999999, "서명 요청 제목이 입력되지 않았습니다.");
             if (string.IsNullOrEmpty(sign.token)) throw new BarocertException(-99999999, "토큰 원문이 입력되지 않았습니다.");
             if (string.IsNullOrEmpty(sign.tokenType)) throw new BarocertException(-99999999, "원문 유형이 입력되지 않았습니다.");
 

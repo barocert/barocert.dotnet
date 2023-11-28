@@ -310,12 +310,9 @@ namespace Barocert
             foreach (Barocert.Kakaocert.MultiSignTokens signTokens in multiSignTokens)
             {
                 if (signTokens == null) return true;
-                if (string.IsNullOrEmpty(signTokens.signTitle))
+                if (string.IsNullOrEmpty(signTokens.signTitle) && (string.IsNullOrEmpty(signTokens.reqTitle)))
                 {
-                    if (string.IsNullOrEmpty(signTokens.reqTitle))
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
             return false;
