@@ -590,6 +590,10 @@
     <Compile Include="navercert\MultiSignResult.cs" />
     <Compile Include="navercert\MultiSignStatus.cs" />
     <Compile Include="navercert\MultiSignTokens.cs" />
+    <Compile Include="navercert\CMS.cs" />
+    <Compile Include="navercert\CMSReceipt.cs" />
+    <Compile Include="navercert\CMSResult.cs" />
+    <Compile Include="navercert\CMSStatus.cs" />
     <Compile Include="passcert\CMSVerify.cs" />
     <Compile Include="passcert\IdentityVerify.cs" />
     <Compile Include="passcert\LoginVerify.cs" />

@@ -351,6 +351,27 @@ namespace Barocert
             return false;
         }
 
+        public string sha256(string target)
+        {
+            byte[] hashed = hash(target);
+            return Base64UrlSafeNoPadding(hashed);
+        }
+
+        static byte[] hash(string target)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashBytes = Encoding.UTF8.GetBytes(target);
+                return sha256.ComputeHash(hashBytes);
+            }
+        }
+
+        static string Base64UrlSafeNoPadding(byte[] hashBytes)
+        {
+            string base64 = Convert.ToBase64String(hashBytes);
+            return base64.TrimEnd('=').Replace('+', '-').Replace('/', '_');
+        }
+
         public string encrypt(string plainText)
         {
             return encGCM(plainText);

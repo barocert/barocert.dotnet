@@ -27,6 +27,7 @@ namespace Barocert.Navercert
             this.AddScope("421");
             this.AddScope("422");
             this.AddScope("423");
+            this.AddScope("424");
         }
         public IdentityReceipt requestIdentity(string ClientCode, Identity identity)
         {
@@ -157,6 +158,50 @@ namespace Barocert.Navercert
             if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
 
             return httppost<MultiSignResult>("/NAVER/MultiSign/" + ClientCode + "/" + ReceiptId);
+        }
+
+        public CMSReceipt requestCMS(string ClientCode, CMS cms)
+        {
+            if (string.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
+            if (null == cms) throw new BarocertException(-99999999, "본인인증 요청정보가 입력되지 않았습니다.");
+            if (string.IsNullOrEmpty(cms.receiverHP)) throw new BarocertException(-99999999, "수신자 휴대폰번호가 입력되지 않았습니다.");
+            if (string.IsNullOrEmpty(cms.receiverName)) throw new BarocertException(-99999999, "수신자 성명이 입력되지 않았습니다.");
+            if (string.IsNullOrEmpty(cms.receiverBirthday)) throw new BarocertException(-99999999, "생년월일이 입력되지 않았습니다.");
+            if (null == cms.expireIn) throw new BarocertException(-99999999, "만료시간이 입력되지 않았습니다.");
+            if (string.IsNullOrEmpty(cms.requestCorp)) throw new BarocertException(-99999999, "청구기관명이 입력되지 않았습니다.");
+            if (string.IsNullOrEmpty(cms.bankName)) throw new BarocertException(-99999999, "은행명이 입력되지 않았습니다.");
+            if (string.IsNullOrEmpty(cms.bankAccountNum)) throw new BarocertException(-99999999, "계좌번호가 입력되지 않았습니다.");
+            if (string.IsNullOrEmpty(cms.bankAccountName)) throw new BarocertException(-99999999, "예금주명이 입력되지 않았습니다.");
+            if (string.IsNullOrEmpty(cms.bankAccountBirthday)) throw new BarocertException(-99999999, "예금주 생년월일이 입력되지 않았습니다.");
+
+            string PostData = toJsonString(cms);
+            return httppost<CMSReceipt>("/NAVER/CMS/" + ClientCode, PostData);
+        }
+
+        public CMSStatus getCMSStatus(string ClientCode, string ReceiptId)
+        {
+            if (string.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
+            if (string.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
+
+            return httpget<CMSStatus>("/NAVER/CMS/" + ClientCode + "/" + ReceiptId);
+        }
+
+        public CMSResult verifyCMS(string ClientCode, string ReceiptId)
+        {
+            if (string.IsNullOrEmpty(ClientCode)) throw new BarocertException(-99999999, "이용기관코드가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ClientCode, @"^\d+$")) throw new BarocertException(-99999999, "이용기관코드는 숫자만 입력할 수 있습니다.");
+            if (ClientCode.Length != 12) throw new BarocertException(-99999999, "이용기관코드는 12자 입니다.");
+            if (string.IsNullOrEmpty(ReceiptId)) throw new BarocertException(-99999999, "접수아이디가 입력되지 않았습니다.");
+            if (false == Regex.IsMatch(ReceiptId, @"^\d+$")) throw new BarocertException(-99999999, "접수아이디는 숫자만 입력할 수 있습니다.");
+            if (ReceiptId.Length != 32) throw new BarocertException(-99999999, "접수아이디는 32자 입니다.");
+
+            return httppost<CMSResult>("/NAVER/CMS/" + ClientCode + "/" + ReceiptId);
         }
 
     }
