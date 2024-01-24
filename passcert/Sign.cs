@@ -28,7 +28,7 @@ namespace Barocert.Passcert
         [DataMember]
         public bool userAgreementYN;
         [DataMember]
-        public bool receiverInfoYN;
+        public bool? receiverInfoYN;
         [DataMember]
         public string originalTypeCode;
         [DataMember]
