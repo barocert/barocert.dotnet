@@ -16,5 +16,13 @@ namespace Barocert.Kakaocert
         public string signedData;
         [DataMember]
         public string ci;
+        [DataMember]
+        public string receiverName;
+        [DataMember]
+        public string receiverYear;
+        [DataMember]
+        public string receiverDay;
+        [DataMember]
+        public string receiverHP;
     }
 }
