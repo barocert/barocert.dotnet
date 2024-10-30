@@ -198,6 +198,8 @@ namespace Barocert
 
             request.Headers.Add("Accept-Encoding", "gzip, deflate");
 
+            request.ReadWriteTimeout = 70 * 1000;
+
             request.AutomaticDecompression = DecompressionMethods.GZip;
 
             request.Method = "GET";
@@ -275,6 +277,7 @@ namespace Barocert
             request.Headers.Add("x-bc-version", APIVERSION);
             request.Headers.Add("x-bc-auth", hmac_str);
             request.Headers.Add("x-bc-encryptionmode", "GCM");
+            request.ReadWriteTimeout = 70 * 1000;
 
             request.ContentLength = btPostDAta.Length;
 

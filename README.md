@@ -1,4 +1,4 @@
-# barocert.dotnet
+﻿# barocert.dotnet
 Barocert SDK for dontet
 ## Reference 
 - The Bouncy Castle Cryptography Library For .NET (v.1.9.0)
@@ -7,6 +7,10 @@ Barocert SDK for dontet
   - MIT License
 
 ## Version
+- v1.5.0 (2024-10-30) 
+  : 카카오써트(검증 응답정보 추가(수신자 성별))
+- v1.4.0 (2024-04-17) 
+  : 카카오써트(검증 응답정보 추가(수신자 성명, 출생년도, 출생월일, 휴대폰번호))
 - v1.3.0 (2023-12-07) 
   : 네이버써트(출금동의)
 - v1.2.0 (2023-10-26) 
