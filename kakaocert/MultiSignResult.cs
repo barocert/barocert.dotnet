@@ -27,5 +27,9 @@ namespace Barocert.Kakaocert
         public string receiverHP;
         [DataMember]
         public string receiverGender;
+        [DataMember]
+        public string receiverForeign;
+        [DataMember]
+        public string receiverTelcoType;
     }
 }
