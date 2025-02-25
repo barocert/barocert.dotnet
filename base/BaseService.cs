@@ -158,7 +158,6 @@ namespace Barocert
             {
                 try
                 {
-                    Console.WriteLine("test");
                     if (_IPRestrictOnOff) // IPRestrictOnOff 사용시
                     {
                         _token = _LinkhubAuth.getToken(ServiceID, "", _Scopes, null, UseStaticIP, UseLocalTimeYN, false);
